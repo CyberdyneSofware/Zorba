@@ -37,6 +37,6 @@
      //choose view/delete
      //select the item based on the item number
      //turn the item use into true
-     //add to the stats
+     //add to the stats - add taylor's 
   
  
