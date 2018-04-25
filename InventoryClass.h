@@ -21,11 +21,13 @@ private:
     /* Items  */
 
     /****
-    Type:
-    weapon = 'w'
-    clothing = 'c'
-    buff = 'b'
-    debuff = 'd'
+    char type = ---->
+    weapon = 'w' - modifies strength
+    clothing = 'c' - modifies defence
+    buffs: HP = 'h' - modifies HP
+    buffs: intelligence = 'i' - modifies intelligence 
+    buffs: Resistance = 'r' - modifies resistance
+    buffs: AP = 'a' - modifies AP
     ****/
 
     string name; //stores the name
@@ -261,11 +263,109 @@ private:
         //message
         message = "It's a tin bottle with neon blue paint across the front, on the top there is a black cap keeping it closed "
     };
+    
+    struct jeanjacket
+    {
+        //name 
+        name = "Jean Jacket";
+        
+        //type 
+        type = 'c';
+        
+        //modify stat
+        modifyStat = 2;
+        
+        //in use 
+        inuse = false; 
+        
+        //message
+        message = "The Jacket is a rough material, and is a sharp dark blue color. Maybe wearing it will make you look pretty cool.";
+        
+    }:
 
-    //buffs
-
-
-    //debuffs
+    struct leatherarmor 
+    {
+        //name 
+        name = "Leather Armor";
+            
+        //type 
+        type = 'c';
+        
+        //modify stat
+        modifyStat = 3;
+        
+        //in use 
+        inuse = false;
+        
+        //message
+        message = "The armor is made of what looks like leather, but when you put it under the light you can see that it is just a faux leather. Upon closer inspection it's appears to just be a t-shirt that looks leather.";
+            
+    };
+    
+    struct steelarmor
+    {
+        //name 
+        name = "Steel Armor";
+        
+        //type 
+        type = 'c';
+        
+        //modify stat
+        modifyStat = 5;
+        
+        //in use 
+        inuse = false; 
+        
+        //message
+        message = "The armor is relatively heavy, and cold at the touch. Surely it'll protect you in battle";
+        
+    };
+    
+    //last clothing in the game 
+    struct diamondarmor
+    {
+        //name 
+        name = "Diamond Armor";
+        
+        //type 
+        type = 'c';
+        
+        //modify stat
+        modifyStat = 100;
+        
+        //in use 
+        inuse = false; 
+        
+        //message
+        message = "This armor shimmers brighter than even the most bright highlighter. This will be the last armor you get in this game use it wisely.";
+        
+    };
+        
+    //buffs:HP
+    struct hppotion
+    {
+        //name 
+        name = "HP Potion";
+        
+        //type 
+        type = 'h';
+        
+        //modify stat
+        modifyStat = 15;
+        
+        //in use 
+        inuse = false;
+        
+        //message
+        message = "The potion is in 
+        
+    };
+    
+    //buffs: intelligence
+    
+    //buffs: Resistance 
+    
+    //buffs: AP
 
 
 };
