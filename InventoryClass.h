@@ -357,11 +357,50 @@ private:
         inuse = false;
         
         //message
-        message = "The potion is in 
+        message = "The potion is in a small glass bottle, which has some soupy red liquid at the bottom of the bottle.";
+        
+    };
+    
+    struct safetycake
+    {
+        //name 
+        name = "Safety Cake";
+        
+        //type 
+        type = 'h';
+        
+        //modify stat
+        modifyStat = 25;
+        
+        //in use 
+        inuse = false; 
+        
+        //message
+        message = "It's a obnoxiously large cake with brightly colored frosting. It looks a bit odd in this environment and you wonder how it got here. Of course, it's a piece of cake to bake a pretty cake so someone probably had fun making it.";  
+        
+    };
+    
+    struct superpotion
+    {
+        //name 
+        name = "Super Potion";
+        
+        //type
+        type = 'h';
+        
+        //modify stat
+        modifyStat = 27;
+        
+        //in use 
+        inuse = false;
+        
+        //message
+        message = "It's a glass bottle with a liquid in it. When you pick it up you notice that it is glowing brightly, and the space around it is tinted slightly red.";
         
     };
     
     //buffs: intelligence
+    
     
     //buffs: Resistance 
     
