@@ -27,7 +27,6 @@ private:
     buffs: HP = 'h' - modifies HP
     buffs: intelligence = 'i' - modifies intelligence 
     buffs: Resistance = 'r' - modifies resistance
-    buffs: AP = 'a' - modifies AP
     ****/
 
     string name; //stores the name
@@ -400,11 +399,47 @@ private:
     };
     
     //buffs: intelligence
+    struct magicleaf
+    {
+        //name 
+        name = "Magic Leaf";
+        
+        //type
+        type = 'i';
+        
+        //modify stat
+        modifyStat = 1;
+        
+        //in use
+        inuse = false;
+        
+        //message
+        message = "It seems like just a leaf, but upon closer inspection, it seems to be magical. Eating it may increase your intelligence somehow.";
+        
+    };
     
+    struct largebook
+    {
+        //name 
+        name = "Large Book";
+        
+        //type
+        type = 'i';
+        
+        //modify stat
+        modifyStat = 4;
+        
+        //in use
+        inuse = false;
+        
+        //message
+        message = "The book is dusty so you can't see the cover, but when you pick it up some of it brushes off and you can see the words on the front. It says HERE LIES YOUR EDUMACATION";
+        
+    };
     
     //buffs: Resistance 
     
-    //buffs: AP
+    
 
 
 };
