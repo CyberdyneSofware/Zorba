@@ -13,8 +13,9 @@ class InventoryClass
 public:
     //functions
     void AddItem(); //add an item to the list
-    void SelectItem(); //use an item
-    void DeleteItem(); //delete an item
+    void ManageMenu(); //managing item
+    //list
+    list<struct> inventory; //the list for the inventory
 
 private:
 
