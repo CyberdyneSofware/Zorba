@@ -16,10 +16,21 @@ string movement;
 
 void move1()
 {
+    struct nothin //Room tiles titles
+    {
+        string entrance = "The entrance room";
+        string mainhall = "The main hall";
+        string puzzle1 = "The Storage room";
+        string puzzle2 = "The Statue room";
+        string miniboss = "Putian's Masterbatorium";
+        string mazetile = "The Minotaurs Maze";
+        string Hurtler = "Hurtler's Office";
+    };
+    nothin = roomtitles;
     do
     {
-        roomplace();
-        cout << cordx << ":X\n" << cordy << ":Y\n";
+    roomplace();
+    cout << cordx << ":X and " << cordy << ":Y\n You are in the: ";
     cout << "What direction are you going?:\n";
     cin >> movement;
         if(movement == "NORTH")//movement for north
@@ -68,35 +79,16 @@ void roomplace()
     {
         puzzle2();
     }
-    else if((cordy == 0)&&(cordx == 3))
+    else if((cordy == 0)&&(cordx == 2))
     {
-        mboss();
+        test();
     }
     else
     {
-            cout << "You run into a wall, like a dingo. Blame Vivian, I guess.\n";
-    if(movement == "NORTH")//reverse movement for north
-    {
-        cordy = cordy - 1;
-    }
-
-    else if(movement == "SOUTH")//reverse move for south
-    {
-        cordy = cordy + 1;
-    }
-
-    else if(movement == "EAST")//reverse move for east
-    {
-        cordx = cordx - 1;
-    }
-
-    else if(movement == "WEST")//reverse move for west
-    {
-        cordx = cordx + 1;
-    }
+        badtile();
     }
 }
-/*void badtile()//reverses the player in whatever direction they came from
+void badtile()//reverses the player in whatever direction they came from
 {
     cout << "You run into a wall, like a dingo. Blame Vivian, I guess.\n";
     if(movement == "NORTH")//reverse movement for north
@@ -118,5 +110,5 @@ void roomplace()
     {
         cordx = cordx + 1;
     }
-}*/
+}
 #endif // MOVE_H_INCLUDED
