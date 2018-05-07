@@ -2,6 +2,8 @@
 #define INVENTORYCOMMAND_H_INCLUDED
 
 #include "InventoryClass.h"
+#include "AddItem.h"
+#include "ManagingMenu.h"
 
 #include <iostream>
 
@@ -15,7 +17,9 @@ Inventory command:
 2. function for deleting and selecting items/ managing inventory
 */
 
-void InventoryCommand()
+InventoryClass item;
+
+char InventoryClass::InventoryCommand(item.choice)
 {
     //variables
     InventoryClass command;
@@ -29,31 +33,11 @@ void InventoryCommand()
     //function for item menu - managing inventory
     if(command.choice == 'b')
     {
-        command.ManagingMenu();
+        command.ManageMenu();
     }
 
     return 0;
 }
 
-void AddItem()
-{
-
-}
-
-void ManagingMenu()
-{
-    /* Viewing the menu */
-    //goes through a loop through the whole linked list and shows them all - with a number
-
-    /* selecting an item */
-    //enter in a number and then it asks what you want to do
-
-    /* Deleting an item */
-    //if they choose to delete it then go into the linked list
-
-    /* Using a item */
-    // if they choose to activate a item
-
-}
 
 #endif // INVENTORYCOMMAND_H_INCLUDED

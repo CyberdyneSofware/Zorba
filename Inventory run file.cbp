@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Inventory run file.cbp" />
+		<Unit filename="Inventory run file.layout" />
+		<Unit filename="InventoryClass.h" />
+		<Unit filename="InventoryCommand.h" />
+		<Unit filename="README.md" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
