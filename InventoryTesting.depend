@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1525902006 source:c:\users\4b-39\downloads\inventorytesting\main.cpp
+	<iostream>
+	<cstring>
+	<list>
+	"InventoryClass.h"
+
+1525901916 source:c:\users\4b-39\downloads\inventorytesting\additem.cpp
+	<iostream>
+	<cstring>
+	<list>
+	"InventoryClass.h"
+
+1525902980 c:\users\4b-39\downloads\inventorytesting\inventoryclass.h
+	<iostream>
+	<cstring>
+	<list>
+	"InventoryClass.h"
+
+1525902016 source:c:\users\4b-39\downloads\inventorytesting\inventorycommand.cpp
+	<iostream>
+	<cstring>
+	<list>
+	"InventoryClass.h"
+
+1525901916 source:c:\users\4b-39\downloads\inventorytesting\manageinventory.cpp
+	<iostream>
+	<cstring>
+	<list>
+	"InventoryClass.h"
+
+1525997892 source:c:\users\kenzie\google drive\zorba-inventory\additem.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+
+1525999040 c:\users\kenzie\google drive\zorba-inventory\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+
+1525997892 source:c:\users\kenzie\google drive\zorba-inventory\inventorycommand.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+
+1525997892 source:c:\users\kenzie\google drive\zorba-inventory\manageinventory.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+
+1525999024 source:c:\users\kenzie\google drive\zorba-inventory\main.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
+1526001620 c:\users\kenzie\google drive\zorba-inventory\item.h
+	<string.h>
+
