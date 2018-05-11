@@ -1,9 +1,24 @@
 #ifndef ITEM_H_INCLUDED
 #define ITEM_H_INCLUDED
-
+#include <iostream>
+#include <list>
 #include <string.h>
+#include "InventoryClass.h"
+
 
 using namespace std;
+
+
+/* All Items */
+/****
+char type = ---->
+weapon = 'w' - modifies strength
+clothing = 'c' - modifies defence
+buffs: HP = 'h' - modifies HP
+buffs: intelligence = 'i' - modifies intelligence
+buffs: Resistance = 'r' - modifies resistance
+****/
+
 
 struct item
 {
@@ -15,8 +30,6 @@ struct item
 };
 
 //item global definitions
-
-
 
 /*WEAPONS*/
 item stick = {
@@ -135,7 +148,93 @@ item leatherarmor = {
 };
 
 item steelarmor = {
-
+    .name = "Steel Armor",
+    .type = 'c',
+    .modifyStat = 5,
+    .inuse = false,
+    .message = "The armor is relatively heavy, and cold at the touch. Surely it'll protect you in battle"
 };
+
+item diamondarmor = {
+    .name = "Diamond Armor",
+    .type = 'c',
+    .modifyStat = 100,
+    .inuse = false,
+    .message = "This armor shimmers brighter than even the most bright highlighter. \nThis will be the last armor you get in this game use it wisely."
+};
+
+
+//buffs:HP
+item hppotion = {
+    .name = "HP Potion",
+    .type = 'h',
+    .modifyStat = 15,
+    .inuse = false,
+    .message = "The potion is in a small glass bottle, which has some soupy red liquid at the bottom of the bottle."
+};
+
+item safetycake = {
+    .name = "Safety Cake",
+    .type = 'h',
+    .modifyStat = 25,
+    .inuse = false,
+    .message = "It's a obnoxiously large cake with brightly colored frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it."
+};
+
+item superpotion = {
+    .name = "Super Potion",
+    .type = 'h',
+    .modifyStat = 27,
+    .inuse = false,
+    .message = "It's a glass bottle with a liquid in it. \nWhen you pick it up you notice that it is glowing brightly and the space around it is tinted slightly red."
+};
+
+
+
+//buffs: intelligence
+item magicleaf = {
+    .name = "Magic Leaf",
+    .type = 'i',
+    .modifyStat = 1,
+    .inuse = false,
+    .message = "It seems like just a leaf, \nbut upon closer inspection, \nit seems to be magical. Eating it may increase your intelligence somehow."
+};
+
+item largebook = {
+    .name = "Large Book",
+    .type = 'i',
+    .modifyStat = 4,
+    .inuse = false,
+    .message = "The book is dusty so you can't see the cover, \nbut when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION. It will  "
+};
+
+item thinkingcap = {
+    .name = "Thinking Cap",
+    .type = 'i',
+    .modifyStat = 6,
+    .inuse = false,
+    .message = "Its a hat made out of a silky fabric with paper stars taped on, very smart looking."
+};
+
+
+
+
+//buffs: Resistance
+item woodenshield = {
+    .name = "Wooden Shield",
+    .type = 'r',
+    .modifyStat = 1,
+    .inuse = false,
+    .message = "The shield looks like it had just been carved out of a tree, not very sturdy, but it'll work."
+};
+
+item antiintelligencepotion = {
+    .name = "Anti Intelligence Potion",
+    .type = 'r',
+    .modifyStat = 5,
+    .inuse = false,
+    .message = "It's a potion which makes intelligence attacks less effective and increases your resistance."
+};
+
 
 #endif
