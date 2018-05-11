@@ -1,57 +1,85 @@
 //Triple Entente 2018
 #include <iostream>
-#include "menu.h"
-#include "Description.h"
 #include <cstring>
 #include <windows.h>
-#include "items.h"
 #include "move.h"
 #include <math.h>
+#include "Fight.h"
+#include <ctype.h>
 using namespace std;
-
+void menu();
+int main();
 void begining();
+void menu()
+{
+    cout << "                                          .\n";
+    cout << "                                         /y.\n";
+    cout << "                                        .s/\n";
+    cout << "                          ----/---::---+oy/-::---::--:\n";
+    cout << "                         -oosyh+sshosssyoysshsssyhossh-\n";
+    cout << "                        `+syydysyhhsyyh+syyhdsyydysyho\n";
+    cout << "                        oossyyossysssy+/hsshsssyd+ysd.\n";
+    cout << "                       `oosshsssso//so./++shossdossy/\n";
+    cout << "             .........::/ossyysssys:..  .:oysosydossh:..\n";
+    cout << "          ////sssyhyyyyysssssso+///-     -////ossssssos+:--.\n";
+    cout << "                `````/sssyyoyydo/:- -+::s+yyhyossy+\n";
+    cout << "                     `/yssdssshd+/y/.sysyossydssshs\n";
+    cout << "                    /sssyhoyydosys-shsydoyyhysyyy:\n";
+    cout << "                   `osssdosshyosy++ysshyssshsssy/\n";
+    cout << "                   `yyyyhsyyhoyyyoyyyyhssyyysyyo.\n";
+    cout << "                      ```````````+yh/````````````\n";
+    cout << "                                 `hy/`\n";
+    cout << "                                -dh-\n";
+    cout << "                                hm/\n";
+
+
+    cout << " _____     _           ____                 _____     ___ _                     \n";
+    cout << "|     |_ _| |_ ___ ___|    \\ _ _ ___ ___   |   __|___|  _| |_ _ _ _ ___ ___ ___ \n";
+    cout << "|   --| | | . | -_|  _|  |  | | |   | -_|  |__   | . |  _|  _| | | | .'|  _| -_|\n";
+    cout << "|_____|_  |___|___|_| |____/|_  |_|_|___|  |_____|___|_| |_| |_____|__,|_| |___|\n";
+    cout << "      |___|                 |___|                                               \n";
+
+    Sleep(3000);
+    system("CLS");
+    cout << "Presents";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    system("CLS");
+
+
+
+    int what;
+    cout <<"          8888888888P  .d88888b.  8888888b.  888888b.        d8888\n";
+    cout <<"               d88P  d88P   Y88b 888   Y88b 888   88b       d88888\n";
+    cout <<"              d88P   888     888 888    888 888  .88P      d88P888\n";
+    cout <<"             d88P    888     888 888   d88P 8888888K.     d88P 888\n";
+    cout <<"            d88P     888     888 8888888P   888   Y88b   d88P  888\n";
+    cout <<"           d88P      888     888 888 T88b   888    888  d88P   888\n";
+    cout <<"          d88P       Y88b. .d88P 888  T88b  888   d88P d8888888888\n";
+    cout <<"         d8888888888   Y88888P   888   T88b 8888888P  d88P     888\n\n";
+
+    system("pause");
+    cout << "REMBER: Type all commands in capital or you're a boob and type exit to quit the game\n";
+    system("pause");
+    system("CLS");
+    allotAP();
+}
+
 int main()
 {
     menu();
-    string command;
-    //tile(int mookz)
+    cout << "Type:\n N - North\n E - East\n S - South\n W - West\n";
     do{
-        /*
-          Commands are as Follows:
-          GRAB(Adds Item to inventory)
-          LOOK(Gives a description of the area)
-          ATTK(rolls dice for damage)
-          MOVE(Moves to a tile)
-          USE(Uses an item)
-        */
-        cout <<"You are in x: " << cordx << " and in y: " << cordy << "\n";
-        cout << "\nEnter a command: ";
-        cin.get();
-        cin >> command;
-
-
-        if(command == "OPEN")//opening a chest
-        {
-            char choice = 'a';
-            //inventorycommand();
-        }
-        else if(command == "LOOK")//describes the room that the player is in
-        {
-            direction();
-        }
-        else if(command == "USE")
-        {
-
-        }
-        else if(command == "MOVE")
-        {
-            moving();
-        }
-        else if(command == "HELP")
-        {
-            cout << "Commands are:\n - GRAB [Item] - Grabs and item in the tile you're in\n - LOOK - Gives a description of the tile your in, and tells you what items are in the tile you're in\n - ATTK - Attacks an enemy in the tile you're in\n - MOVE [Direction] - Moves to a tile North, East, South, or West\n - EXIT - Exits the game, and returns you to MS-DOS\n";
-        }
-    }while(command != "EXIT");
+        cout << "You are in X: " << cordx <<" and Y: " << cordy << "\n";
+        move1();
+        roomplace();
+        cin.ignore();
+    }while(movement != "EXIT");
 
     return 0;
 }
