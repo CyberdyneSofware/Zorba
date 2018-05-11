@@ -1,9 +1,10 @@
 #ifndef MOVE_H_INCLUDED
 #define MOVE_H_INCLUDED
 #include "rooms.h"
-#include <cstring>
+#include "Fight.h"
+#include <ctype.h>
 #include <iostream>
-
+#include <stdio.h>
 using namespace std;
 //definitions
 void move1();
@@ -16,39 +17,27 @@ string movement;
 
 void move1()
 {
-    struct nothin //Room tiles titles
-    {
-        string entrance = "The entrance room";
-        string mainhall = "The main hall";
-        string puzzle1 = "The Storage room";
-        string puzzle2 = "The Statue room";
-        string miniboss = "Putian's Masterbatorium";
-        string mazetile = "The Minotaurs Maze";
-        string Hurtler = "Hurtler's Office";
-    };
-    nothin = roomtitles;
-    do
-    {
-    roomplace();
-    cout << cordx << ":X and " << cordy << ":Y\n You are in the: ";
-    cout << "What direction are you going?:\n";
+    int i=0;
+    char c;
+    cout << "Type a direction: ";
     cin >> movement;
-        if(movement == "NORTH")//movement for north
+
+        if((movement == "NORTH")||(movement == "N"))//movement for north
         {
             cordy = cordy + 1;
         }
 
-        else if(movement == "SOUTH")//move for south
+        else if((movement == "SOUTH")||(movement == "S"))//move for south
         {
             cordy = cordy - 1;
         }
 
-        else if(movement == "EAST")//move for east
+        else if((movement == "EAST")||(movement == "E"))//move for east
         {
             cordx = cordx + 1;
         }
 
-        else if(movement == "WEST")//move for west
+        else if((movement == "WEST")||(movement == "W"))//move for west
         {
             cordx = cordx - 1;
         }
@@ -56,9 +45,7 @@ void move1()
         {
             cout << "Invalid Direction\n";
         }
-
-
-    }while(movement != "EXIT");
+        mon();
 }
 
 void roomplace()
@@ -79,9 +66,9 @@ void roomplace()
     {
         puzzle2();
     }
-    else if((cordy == 0)&&(cordx == 2))
+    else if((cordy == 2)&&(cordx == 0))
     {
-        test();
+        mboss();
     }
     else
     {

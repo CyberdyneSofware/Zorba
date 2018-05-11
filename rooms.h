@@ -2,6 +2,9 @@
 #define ROOMS_H_INCLUDED
 #include "move.h"
 using namespace std;
+void move1();
+void roomplace();
+void badtile();
 int puzzle=0;
 
 void enterance()//Entrance Tile
@@ -18,16 +21,22 @@ void main_hall()//main hall
 void puzzle1()//puzzle room 1, contains what to say in the main hall
 {
     cout <<"This looks like a storage room, there are lots of barrels and crates all around the room.\n";
-    cout <<"There is writing on the wall, it says 'Say my name, Say my name, Say my name\n";
+    cout <<"There is writing on the wall, it says 'Say my name, Say my name, Say my name in another room\n";
 }
 void puzzle2()//puzzle room 2, contains a statue with the name "Shakira" when the player types "Say my name"
 {
-    char name[10];
+    string name;
     cout << "This room is empty, other than a statue with a strange man with a weird mustache\n";
+    cout << "Say my name?: ";
+    cin >> name;
     if (name == "Shakira")
     {
 
         cout << "The statue begins to rumble and raise up, reveling letters carved into stone that say: To fight the boss you must type the magic word\n";
+    }
+    else
+    {
+        cout << "Not my name thot\n";
     }
 }
 void mboss()//This is the room where the mini-boss is
@@ -38,15 +47,22 @@ void mboss()//This is the room where the mini-boss is
     if (pass == "PLEASE")
     {
         cout << "'Very good' Says the hot, sexy voice answers and the large wooden doors open\n";
+        //mini boss dialog
         cout << "Good load is Putin! The reaper of the Siberian plains! The door locks behind you and Putin is blocking the exit!\n";
+        //Battle sequence
     }
+
     if(pass!="PLEASE")
     {
         cout << "'Cyka Blyat, thats the wrong answer' The voice says as a wind pushes you back";
-
+        badtile();
     }
-}
 
+}
+void test()
+{
+    cout << "Test 1000";
+}
 
 
 
