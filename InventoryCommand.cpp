@@ -6,20 +6,21 @@
 
 using namespace std;
 
-void InventoryCommand()
+void InventoryClass::InventoryCommand()
 {
+    InventoryClass run;
+
     //object for running the functions from the class
-    InventoryClass runFunction;
 
     //if they types in to add an item
-    if(addOrManage == 'a' || addOrManage == 'A')
+    if(run.addOrManage == 'a' || run.addOrManage == 'A')
     {
-        runFunction.AddItem();
+        run.AddItem();
     }
 
-    if(addOrMange == 'b' || addOrMange == 'B')
+    if(run.addOrManage == 'b' || run.addOrManage == 'B')
     {
-        runFunction.ManageInventory();
+        run.ManageInventory();
     }
 }
 

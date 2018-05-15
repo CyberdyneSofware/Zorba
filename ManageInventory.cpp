@@ -6,3 +6,7 @@
 
 using namespace std;
 
+void InventoryClass::ManageInventory()
+{
+
+}

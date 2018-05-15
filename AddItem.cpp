@@ -6,4 +6,7 @@
 
 using namespace std;
 
+void InventoryClass::AddItem()
+{
 
+}

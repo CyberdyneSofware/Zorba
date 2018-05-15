@@ -63,3 +63,43 @@
 1526001620 c:\users\kenzie\google drive\zorba-inventory\item.h
 	<string.h>
 
+1526422757 source:c:\users\4b-39\zorba-inventory\additem.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
+1526422757 c:\users\4b-39\zorba-inventory\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+	"Item.h"
+
+1526079489 c:\users\4b-39\zorba-inventory\item.h
+	<iostream>
+	<list>
+	<string.h>
+	"InventoryClass.h"
+
+1526422757 source:c:\users\4b-39\zorba-inventory\inventorycommand.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
+1526422779 source:c:\users\4b-39\zorba-inventory\main.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
+1526422757 source:c:\users\4b-39\zorba-inventory\manageinventory.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
