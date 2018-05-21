@@ -34,7 +34,7 @@ int main()
     cin >> y;
     cin.get();
     cout << "Enter the letter for what you are testing here a/adding an item, b/managing inventory: ";
-    cin >> run.addOrManage;
+    cin >> InventoryClass::addOrManage;
     cin.get();
 
     //go to the main code - this is where it would go when you actually take out the main
