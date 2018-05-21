@@ -22,3 +22,26 @@
 	<list>
 	<string.h>
 
+1526879973 source:c:\users\p8-39\zorba-inventory\main.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+	"Item.h"
+
+1526879973 c:\users\p8-39\zorba-inventory\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+
+1526879973 c:\users\p8-39\zorba-inventory\item.h
+	<iostream>
+	<list>
+	<string.h>
+
+1526941960 source:c:\users\p8-39\zorba-inventory\inventoryclass.cpp
+	<iostream>
+	<string.h>
+	<list>
+	"InventoryClass.h"
+
