@@ -3,8 +3,6 @@
 #include <iostream>
 #include <list>
 #include <string.h>
-#include "InventoryClass.h"
-
 
 using namespace std;
 

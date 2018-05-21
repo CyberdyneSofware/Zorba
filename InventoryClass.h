@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string.h>
 #include <list>
-#include "Item.h"
 
 using namespace std;
 
