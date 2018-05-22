@@ -39,27 +39,59 @@ In Battle:
 *****/
 void InventoryClass::ManageInventory()
 {
+    //chest is open - true  chest is closed - false
+    bool chest00 = false;
+    bool chest01 = false;
+    bool chest02 = false;
+    bool chest03 = false;
+    bool chest04 = false;
+    bool chest_11 = false;
+    bool chest11 = false;
+    
     /* Out of battle */
     if (inOrOutBattle == false)
     {
         //check each room for a chest - if they are the coordinates then they will open it - if they have opened it then set it's open or close variable true
-        if(cordx == 0 && cordy == 0)
+        if(cordx == 0 && cordy == 0 && chest00 == false)
         {
-
+        
+            //chest is now open
+            chest00 = true;
         }
-        if(cordx == 0 && cordy == 1)
+        if(cordx == 0 && cordy == 1 && chest01 == false)
         {
-
+            
+            //chest is now open
+            chest01 = true;
         }
-        if(cordx == 0 && cordy == 2)
+        if(cordx == 0 && cordy == 2 && chest02 == false)
         {
-
+            
+            //chest is now open
+            chest02 = true;
         }
-        if(cordx == 0 && cordy == 3)
+        if(cordx == 0 && cordy == 3 && chest03 == false)
         {
-
+            
+            //chest is now open 
+            chest03 = true;
         }
-        if(cordx == 0 && cordy == 4)
+        if(cordx == 0 && cordy == 4 && chest04 == )
+        {
+            
+        }
+        if(cordx == -1 && cordy == 1)
+        {
+            
+        }
+        if(cordx == 1 && cordy == 1)
+        {
+            
+        }
+        if else
+        {
+            cout << "\nSorry my dude, There are no chests to be opened in this room";   
+        }
     }
 
     /* In Battle */
