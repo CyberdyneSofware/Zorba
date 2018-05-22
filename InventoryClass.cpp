@@ -15,6 +15,9 @@ void InventoryClass::InventoryCommand()
     //object for running the functions from the class
     InventoryClass run;
 
+    //add the basic items to the player's inventory
+    
+    
     //if user is adding an item to the inventory
     if(addOrManage == 'a' || addOrManage == 'A')
     {
@@ -54,7 +57,7 @@ void InventoryClass::ManageInventory()
         //check each room for a chest - if they are the coordinates then they will open it - if they have opened it then set it's open or close variable true
         if(cordx == 0 && cordy == 0 && chest00 == false)
         {
-        
+            
             //chest is now open
             chest00 = true;
         }
@@ -76,17 +79,23 @@ void InventoryClass::ManageInventory()
             //chest is now open 
             chest03 = true;
         }
-        if(cordx == 0 && cordy == 4 && chest04 == )
+        if(cordx == 0 && cordy == 4 && chest04 == false)
         {
             
+            //chest is now open
+            chest04 = true;
         }
-        if(cordx == -1 && cordy == 1)
+        if(cordx == -1 && cordy == 1 && chest_11 == false)
         {
             
+            //chest is now open 
+            chest_11 = true
         }
-        if(cordx == 1 && cordy == 1)
+        if(cordx == 1 && cordy == 1 && chest11 == false)
         {
             
+            //chest is now open 
+            chest11 = true; 
         }
         if else
         {
