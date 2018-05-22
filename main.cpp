@@ -20,14 +20,27 @@ int main()
     int battletest; // lets you enter in what you want to test for battle
 
     /**
-    To go on to the program i will need.. the addOrManage variable to be set to either 'a' or 'b'
-    the coordinates to be set
-    the addOrManage variable to be set to either 'a' or 'b'
+    PLEASE IMPLEMENT THIS INTO YOUR CODE IF YOU ARE ADDING IT TO THE FIGHT CODE OR THE MAIN CODE
+    please add.... 
+    #include "InventoryClass.h"
+    
+    a object called InventoryClass run; you will use this to be calling the inventory command
+    when you want to do anything with the inventory please call run.InventoryCommand
+    
+    the InventoryClass::inOrOutBattle variable should be set to either true or false 
+    true meaing that a battle is running a the current moment 
+    or false meaning there is no battle running at the current moment
+    the variable will be automatically set to false.
+    
+    the InventoryClass::addOrManage variable to be set to either 'a' or 'b'
     'a' meaning adding an item
     'b' meaning managing inventory
-    please pass addOrManage through the function InventoryCommand(addOrManage) with the right letter so that the inventory command will know where to go
+    
     **/
-
+    
+    
+    
+    
     cout << "This is the test file for the inventory: please enter in the information which cannot be inferred at this time\ndue to this being a test file.";
     cout << "\nEnter the x coordinate here: ";
     cin >> cordx;
