@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1526424020 source:c:\users\fharanova\desktop\zorba\main.cpp
+	<iostream>
+	<cstring>
+	<windows.h>
+	"move.h"
+	<math.h>
+	<ctype.h>
+
+1526422659 c:\users\fharanova\desktop\zorba\move.h
+	"rooms.h"
+	"Fight.h"
+	<ctype.h>
+	<iostream>
+	<stdio.h>
+
+1526422457 c:\users\fharanova\desktop\zorba\rooms.h
+	"move.h"
+
+1526421966 c:\users\fharanova\desktop\zorba\fight.h
+	<iostream>
+	<Windows.h>
+	<stdlib.h>
+	<ctime>
+	<math.h>
+
+1527014653 source:c:\users\fharanova\desktop\computer utillities\zorba\main.cpp
+	<iostream>
+	<cstring>
+	<windows.h>
+	"move.h"
+	<math.h>
+	<ctype.h>
+
+1527014948 c:\users\fharanova\desktop\computer utillities\zorba\move.h
+	"rooms.h"
+	"Fight.h"
+	<ctype.h>
+	<iostream>
+	<stdio.h>
+
+1527014386 c:\users\fharanova\desktop\computer utillities\zorba\rooms.h
+	"move.h"
+
+1527015079 c:\users\fharanova\desktop\computer utillities\zorba\fight.h
+	<iostream>
+	<Windows.h>
+	<stdlib.h>
+	<ctime>
+	<math.h>
+
