@@ -5,6 +5,14 @@
 
 using namespace std;
 
+<<<<<<< HEAD
+=======
+int cordx, cordy; //holds the x and y coordinates globally for the mean time
+//global variables - add to the command file when you take out main
+
+
+
+>>>>>>> 43dcf68a86c745d6ab98219b610505b9fa06c965
 int main()
 {
     //this is a temporary file which allows you to test the inventory code while it's being written
@@ -15,6 +23,7 @@ int main()
 
     /**
     PLEASE IMPLEMENT THIS INTO YOUR CODE IF YOU ARE ADDING IT TO THE FIGHT CODE OR THE MAIN CODE
+<<<<<<< HEAD
     please add....
     #include "InventoryClass.h"
 
@@ -30,14 +39,41 @@ int main()
     'a' meaning adding an item
     'b' meaning managing inventory
 
+=======
+    please add.... 
+    #include "InventoryClass.h"
+    
+    a object called InventoryClass run; you will use this to be calling the inventory command
+    when you want to do anything with the inventory please call run.InventoryCommand
+    
+    the InventoryClass::inOrOutBattle variable should be set to either true or false 
+    true meaing that a battle is running a the current moment 
+    or false meaning there is no battle running at the current moment
+    the variable will be automatically set to false.
+    
+    the InventoryClass::addOrManage variable to be set to either 'a' or 'b'
+    'a' meaning adding an item
+    'b' meaning managing inventory
+    
+>>>>>>> 43dcf68a86c745d6ab98219b610505b9fa06c965
     **/
-
+    
+    
+    
+    
     cout << "This is the test file for the inventory: please enter in the information which cannot be inferred at this time\ndue to this being a test file.";
     cout << "\nEnter the x coordinate here: ";
+<<<<<<< HEAD
     cin >> InventoryClass::cordx;
     cin.get();
     cout << "\nEnter the y coordinate here: ";
     cin >> InventoryClass::cordy;
+=======
+    cin >> cordx;
+    cin.get();
+    cout << "\nEnter the y coordinate here: ";
+    cin >> cordy;
+>>>>>>> 43dcf68a86c745d6ab98219b610505b9fa06c965
     cin.get();
     cout << "\nEnter the letter for what you are testing here a/adding an item, b/managing inventory: ";
     cin >> InventoryClass::addOrManage;
