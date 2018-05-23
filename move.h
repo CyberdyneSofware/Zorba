@@ -51,6 +51,10 @@ void move1()
         cout << "thicc";
         //makkie's Inventory set to b
     }
+    else if(movement == "M")
+    {
+        maps();
+    }
     else
     {
         cout << "Invalid command\n";
@@ -76,7 +80,7 @@ void roomplace()
     {
         puzzle2();
     }
-    else if((cordx == 0)&&(cordy == 0))//Mini Boss Putin cord: (0,2)
+    else if((cordx == 0)&&(cordy == 2))//Mini Boss Putin cord: (0,2)
     {
         mboss();
     }

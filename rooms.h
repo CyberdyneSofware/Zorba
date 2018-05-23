@@ -20,7 +20,8 @@ void enterance()//Entrance Tile
     cout << "You are in the entrance, there is a door to the north\n";
 }
 void main_hall()//main hall
-{   cout << "          N         \n";
+{
+    cout << "          N         \n";
     cout << " 0o0o0o0|   |o0o0o0 \n";
     cout << " o0|----|   |---|0o \n";
     cout << " 0o|            |o0 \n";
@@ -75,12 +76,26 @@ void puzzle2()//puzzle room 2, contains a statue with the name "Shakira" when th
 }
 void mboss()//This is the room where the mini-boss is
 {
+    cout << "          N           \n";
+    cout << " 0o0o0o0 |   |o0o0o0o \n";
+    cout << " o0|=====+   +====|0o \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|              |o0 \n";
+    cout << " 0o|              |0o \n";
+    cout << " o0|    Putin's   |o0 \n";
+    cout << " 0o|Masturbatorium|o0 \n";
+    cout << " o0|              |0o \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|=====+   +====|0o \n";
+    cout << " 0o0o0o0 |   |o0o0o0o \n";
+    cout << "          S           \n";
     string pass;
     cout << "A deep, sexy, powerful Russian voice speaks to you 'Whats the password?'\n";
     cin >> pass;
     if (pass == "PLEASE")
     {
-        cout << "'Very good' Says the hot, sexy voice answers and the large wooden doors open\n";
+        cout << " 'Very good' Says the hot, sexy voice answers and the large wooden doors open\n";
         //mini boss dialog
         cout << "Good load is Putin! The reaper of the Siberian plains! The door locks behind you and Putin is blocking the exit!\n";
         //Battle sequence
@@ -100,15 +115,138 @@ void test()
 }
 void puzzle3()
 {
+    string q1;
+    string q2;
+    string q3;
+    cout << "           N          \n";
+    cout << " 0o0o0o0 |   |o0o0o0o \n";
+    cout << " o0|=====+   +====|0o \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|      | |     |o0 \n";
+    cout << " 0o|      | |     |0o \n";
+    cout << " o0|  ----+ +---- |o0 \n";
+    cout << " 0o|  ----+ +---- |o0 \n";
+    cout << " o0|      | |     |0o \n";
+    cout << " o0|      | |     |0o \n";
+    cout << " o0|    Hallway   |0o \n";
+    cout << " o0|      of      |0o \n";
+    cout << " o0|     death    |0o \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|              |0o \n";
+    cout << " o0|              |0o \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|=====+   +====|0o \n";
+    cout << " 0o0o0o0 |   |o0o0o0o \n";
+    cout << "           S          \n";
     cout << "puzzle 3";
+    cout << "You may have brought your pants, but....\n did you study for your MATH TEST!!!";
+    cout << "What is you're name?: ";
+    cin >> q1;
+    cout << "What is your quest?: ";
+    cin >> q2;
+    cout << "What is your favorite color?: ";
+    cin >> q3;
+    system("CLS");
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    Sleep(1000);
+    cout << ".";
+    cout << "Okay, you can go\n";
+    system("pause");
     //really hard puzzle
 }
 void hitler()
 {
+    cout << "          N           \n";
+    cout << " 0o0o0o00o0o0o0o0o0o0 \n";
+    cout << " o0|===============|0o \n";
+    cout << " 0o|      =o=      |o0 \n";
+    cout << " o0|      ###      |0o \n";
+    cout << " o0|               |o0 \n";
+    cout << " 0o|               |0o \n";
+    cout << " o0|    Hitler's   |o0 \n";
+    cout << " 0o|     Office    |o0 \n";
+    cout << " o0|               |0o \n";
+    cout << " 0o|               |o0 \n";
+    cout << " o0|=====+    +====|0o \n";
+    cout << " 0o0o0o0 |    |o0o0o0o \n";
+    cout << "          S           \n";
     cout << "hitler";
     //hitler battle
 }
-
+void maps()
+{
+    cout << "                       \n";
+    cout << " 0o0o0o00o0o0o0o0o0o0  \n";
+    cout << " o0|===============|0o \n";
+    cout << " 0o|      =o=      |o0 \n";
+    cout << " o0|      ###      |0o \n";
+    cout << " o0|               |o0 \n";
+    cout << " 0o|               |0o \n";
+    cout << " o0|    Hitler's   |o0 \n";
+    cout << " 0o|     Office    |o0 \n";
+    cout << " o0|               |0o \n";
+    cout << " 0o|               |o0 \n";
+    cout << " o0|=====+    +====|0o \n";
+    cout << " 0o0o0o0 |    |o0o0o0o \n";
+    cout << " 0o0o0o0 |   |o0o0o0o  \n";
+    cout << " o0|=====+   +====|0o  \n";
+    cout << " 0o|              |o0  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|      | |     |o0  \n";
+    cout << " 0o|      | |     |0o  \n";
+    cout << " o0|  ----+ +---- |o0  \n";
+    cout << " 0o|  ----+ +---- |o0  \n";
+    cout << " o0|      | |     |0o  \n";
+    cout << " o0|      | |     |0o  \n";
+    cout << " o0|    Hallway   |0o  \n";
+    cout << " o0|      of      |0o  \n";
+    cout << " o0|     death    |0o  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|              |0o  \n";
+    cout << " 0o|              |o0  \n";
+    cout << " o0|=====+   +====|0o  \n";
+    cout << " 0o0o0o0 |   |o0o0o0o  \n";
+    cout << " 0o0o0o0 |   |o0o0o0o  \n";
+    cout << " o0|=====+   +====|0o  \n";
+    cout << " 0o|              |o0  \n";
+    cout << " o0|              |0o  \n";
+    cout << " o0|              |o0  \n";
+    cout << " 0o|              |0o  \n";
+    cout << " o0|    Putin's   |o0  \n";
+    cout << " 0o|Masturbatorium|o0  \n";
+    cout << " o0|              |0o  \n";
+    cout << " 0o|              |o0  \n";
+    cout << " o0|=====+   +====|0o  \n";
+    cout << " 0o0o0o0o|   |o0o0o0o  \n";
+    cout << " 0o0o0o0o|   |o0o0o0   \n";
+    cout << " o0|-----|   |----|0o  \n";
+    cout << " 0o|              |o0  \n";
+    cout << " o0|              |0o  \n";
+    cout << " --                --  \n";
+    cout << "                        \n";
+    cout << " __   Main Hall    __ \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|              |0o \n";
+    cout << " 0o|              |o0 \n";
+    cout << " o0|----|   |-----|0o \n";
+    cout << " 0o0o0o0|   |o0o0o0   \n";
+    cout <<    "00000|   |00000    \n";
+    cout <<"    0|---|   |---|0    \n";
+    cout <<"    0|           |0    \n";
+    cout <<"    0| Enterance |0    \n";
+    cout <<"    0|           |0    \n";
+    cout <<"    0|___________|0    \n";
+    cout <<"    000000000000000    \n";
+}
 
 
 #endif // ROOMS_H_INCLUDED

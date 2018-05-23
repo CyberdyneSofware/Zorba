@@ -84,7 +84,7 @@ int main()
 {
 
     menu();
-    cout << "Commands:\n N - North\n E - East\n S - South\n W - West\n I - Open inventory\n L - A description of the room you're in\n";
+    cout << "Commands:\n N - North\n E - East\n S - South\n W - West\n I - Open inventory\n L - A description of the room you're in\n M - Map of the Dungeon\n";
     do{
 
         //check for chest in room, if there is none, then they can not use A
