@@ -7,6 +7,8 @@
 using namespace std;
 
 
+/* Linked list below under items */
+
 /* All Items */
 /****
 char type = ---->
@@ -214,9 +216,6 @@ item thinkingcap = {
     .message = "Its a hat made out of a silky fabric with paper stars taped on, very smart looking."
 };
 
-
-
-
 //buffs: Resistance
 item woodenshield = {
     .name = "Wooden Shield",
@@ -234,5 +233,8 @@ item antiintelligencepotion = {
     .message = "It's a potion which makes intelligence attacks less effective and increases your resistance."
 };
 
+
+/* LINKED LIST */
+list<item> listOfItems;
 
 #endif

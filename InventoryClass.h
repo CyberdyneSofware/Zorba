@@ -18,6 +18,9 @@ class InventoryClass
     static char addOrManage; //please set in your program before calling InventoryCommand to either 'a' or 'b' based off of if your adding to the inventory or managing it
     static bool inOrOutBattle; //please set to either true; meaning you are in a battle or false; meaning you are outside of a battle
 
+    static float cordx; //the coordinates for x
+    static float cordy; //the coordinates for y
+
     private:
 
 };
