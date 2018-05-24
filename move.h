@@ -4,8 +4,8 @@
 #ifndef MOVE_H_INCLUDED
 #define MOVE_H_INCLUDED
 
-#include "rooms.h"
-#include "Fight.h"
+#include "rooms.h"//Functions for all the rooms
+#include "Fight.h"//Taylor's Fight code
 #include <ctype.h>
 #include <iostream>
 #include <stdio.h>
@@ -54,6 +54,10 @@ void move1()
     else if(movement == "M")
     {
         maps();
+    }
+    else if(movement == "L")
+    {
+        roomplace();
     }
     else
     {

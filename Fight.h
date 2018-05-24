@@ -93,13 +93,13 @@ void mon()
 {
     int mon1 = 0;
     mon1 = rand() % 5;
-    if(mon1 < 1)
+    if(mon1 < 2)
     {
         cout << "You ran into a mook! Queue the Pokemon battle music\n";
         system("pause");
         fight1();
     }
-    else if(mon1 > 2)
+    else if(mon1 > 3)
     {
         cout << "\n";
     }
