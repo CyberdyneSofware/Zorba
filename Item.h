@@ -20,6 +20,26 @@ buffs: Resistance = 'r' - modifies resistance
 ****/
 
 
+//Temporary place for the character stats - TAKE OUT ONCE TAYLOR'S CODE HAS BEEN COMBINED
+struct character{
+
+    char name[30]; //Name - name of character/Monster
+    int level = 1; //Level - The character's current level of power
+    float EXP = 0; //Experience - The player's current experience points
+    int maxEXP = 100; //Maximum Experience - Maximum possible Experience points before a character levels up
+    int maxHP = 15; //Maximum hit points - The character's maximum possible Health
+    int HP = 15; //Hit points - The character's current Health
+    int maxMP = 5; //Maximum Mana Points - The character's maximum possible Mana
+    int MP = 5; //Mana points - The Character's current Mana
+    float strength = 2; //Strength - Physical attack power
+    float defense = 2; //Defense - Defense against physical attacks
+    float intelligence = 2; //intelligence - Magical Attack power
+    float resistance = 2; //Resistance - Defense against magic attacks
+    int AP = 10; //Ability points - points to distribute towards stats of player choice
+
+};
+
+//the struct for any item
 struct item
 {
     string name; //stores the name
@@ -30,8 +50,9 @@ struct item
 };
 
 //item global definitions
-
 /*WEAPONS*/
+
+//beginner item
 item stick = {
     .name = "Stick",
     .type = 'W',
@@ -40,6 +61,7 @@ item stick = {
     .message = "Can't wait to see you on the new watchmojo video; top ten worst anime weapons"
 };
 
+//chest item
 item basicsword = {
     .name = "Basic Sword",
     .type = 'w',
@@ -48,6 +70,7 @@ item basicsword = {
     .message = "Wow maybe you'll actually make a dent in em."
 };
 
+//battle item
 item knife = {
     .name = "Knife",
     .type = 'w',
@@ -56,6 +79,7 @@ item knife = {
     .message = "Not very useful from far way, but good luck."
 };
 
+//battle item
 item genericgun = {
     .name = "Generic Gun",
     .type = 'w',
@@ -64,14 +88,16 @@ item genericgun = {
     .message = "This is gun. Have fun. Pleb."
 };
 
+//chest item
 item dragonslayer = {
     .name = "Dragon Slayer",
     .type = 'w',
     .modifyStat = 7,
     .inuse = false,
-    .message = "The sword has to be almost 8 feet long and the handle has a bandage wrapped around it, \nyou wonder how anyone can pick this thing up.\n With a lot of effort you are able to lift it off the ground. \nOn the bandage there is something written in scrambled letters: W arni ng  y ou  must hav e  a tragi c back  s tory to use thi s  weapon."
+    .message = "The sword has to be almost 8 feet long and the handle has a bandage wrapped around it, \nyou wonder how anyone can pick this thing up.\n With a lot of effort you are able to lift it off the ground."
 };
 
+//battle item
 item thestaff = {
     .name = "THE Staff",
     .type = 'w',
@@ -80,25 +106,28 @@ item thestaff = {
     .message = "Not staff as in a worker but staff as in the weapon. It's wooden except for the blade on the end which is steal."
 };
 
+//chest item
 item bootgun = {
     .name = "Boot Gun",
     .type = 'w',
     .modifyStat = 6,
     .inuse = false,
-    .message = "The weapon is a weirdly shaped boot, you wonder if you can even put it on. \nattached to the front is what looks like the front of a gun. \nWritten mysteriously on the side with a sharpie is the words: Kick to Shoot."
+    .message = "The weapon is a weirdly shaped boot, you wonder if you can even put it on. \nattached to the front is what looks like the front of a gun. \nWritten mysteriously on the side with a sharpie is the words:\n Kick to Shoot."
 };
 
+//end of the battle item
 item theswordgunknife = {
     .name = "The Sword Gun Knife",
     .type = 'w',
-    .modifyStat = 100,
+    .modifyStat = 50,
     .inuse = false,
-    .message = "This is the most OP weapon in the game. It's a sword, a gun, and a knife all at once. Good luck with the last battle!"
+    .message = "This is the most OP weapon in the game. It's a sword, a gun, and a knife all at once!"
 };
 
 
 
 /*CLOTHING*/
+//begginer item
 item tatteredcloth = {
     .name = "Tattered Cloth",
     .type = 'c',
@@ -107,6 +136,7 @@ item tatteredcloth = {
     .message = "It has a few questionable holes in it, but otherwise it will shield you from the cold. Eh, it'll work"
 };
 
+//battle item
 item beret = {
     .name = "Beret",
     .type = 'c',
@@ -115,6 +145,7 @@ item beret = {
     .message = "It looks a bit worn, but kind of neat. Some of the string sewing it together has unraveled and is barely holding a pin to the front. \n(Are you cosplaying as Phillip?)"
 };
 
+//battle item
 item blackandwhitejacket = {
     .name = "Black and White Jacket",
     .type = 'c',
@@ -123,6 +154,7 @@ item blackandwhitejacket = {
     .message = "It is a thin jacket with a zipper in the front, you don't know who left this behind. \n(You can almost be as edgy as Alexi with this)"
 };
 
+//battle item
 item bluehairdye = {
     .name = "Blue Hair Dye",
     .type = 'c',
@@ -131,6 +163,7 @@ item bluehairdye = {
     .message = "It's a tin bottle with neon blue paint across the front, on the top there is a black cap keeping it closed "
 };
 
+//battle item
 item jeanjacket = {
     .name = "Jean Jacket",
     .type = 'c',
@@ -139,14 +172,16 @@ item jeanjacket = {
     .message = "The Jacket is a rough material, and is a sharp dark blue color. Maybe wearing it will make you look pretty cool."
 };
 
+//chest item
 item leatherarmor = {
     .name = "Leather Armor",
     .type = 'c',
     .modifyStat = 3,
     .inuse = false,
-    .message = "The armor is made of what looks like leather, \nbut when you put it under the light you can see that it is just a fuax leather. \nUpon closer inspection it's appears to just be a t-shirt that looks leather."
+    .message = "The armor is made of what looks like leather, \nbut upon closer inspection it's appears to just be a t-shirt that looks leather."
 };
 
+//battle item
 item steelarmor = {
     .name = "Steel Armor",
     .type = 'c',
@@ -155,16 +190,18 @@ item steelarmor = {
     .message = "The armor is relatively heavy, and cold at the touch. Surely it'll protect you in battle"
 };
 
+//chest item - end game
 item diamondarmor = {
     .name = "Diamond Armor",
     .type = 'c',
-    .modifyStat = 100,
+    .modifyStat = 50,
     .inuse = false,
     .message = "This armor shimmers brighter than even the most bright highlighter. \nThis will be the last armor you get in this game use it wisely."
 };
 
 
 //buffs:HP
+//beginner item and battle item
 item hppotion = {
     .name = "HP Potion",
     .type = 'h',
@@ -173,25 +210,27 @@ item hppotion = {
     .message = "The potion is in a small glass bottle, which has some soupy red liquid at the bottom of the bottle."
 };
 
+//battle item
 item safetycake = {
     .name = "Safety Cake",
     .type = 'h',
     .modifyStat = 25,
     .inuse = false,
-    .message = "It's a obnoxiously large cake with brightly colored frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it."
+    .message = "It's a obnoxiously large cake with brightly colored pink frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it."
 };
 
+//chest item - end game
 item superpotion = {
     .name = "Super Potion",
     .type = 'h',
-    .modifyStat = 27,
+    .modifyStat = 50,
     .inuse = false,
     .message = "It's a glass bottle with a liquid in it. \nWhen you pick it up you notice that it is glowing brightly and the space around it is tinted slightly red."
 };
 
 
-
 //buffs: intelligence
+//battle item
 item magicleaf = {
     .name = "Magic Leaf",
     .type = 'i',
@@ -200,6 +239,7 @@ item magicleaf = {
     .message = "It seems like just a leaf, \nbut upon closer inspection, \nit seems to be magical. Eating it may increase your intelligence somehow."
 };
 
+//battle item
 item largebook = {
     .name = "Large Book",
     .type = 'i',
@@ -208,6 +248,7 @@ item largebook = {
     .message = "The book is dusty so you can't see the cover, \nbut when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION. It will  "
 };
 
+//battle item
 item thinkingcap = {
     .name = "Thinking Cap",
     .type = 'i',
@@ -217,6 +258,7 @@ item thinkingcap = {
 };
 
 //buffs: Resistance
+//battle item
 item woodenshield = {
     .name = "Wooden Shield",
     .type = 'r',
@@ -225,6 +267,7 @@ item woodenshield = {
     .message = "The shield looks like it had just been carved out of a tree, not very sturdy, but it'll work."
 };
 
+//battle item
 item antiintelligencepotion = {
     .name = "Anti Intelligence Potion",
     .type = 'r',

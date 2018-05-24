@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string.h>
 #include <list>
+#include<stdlib.h>
+
 #include "InventoryClass.h"
 
 using namespace std;
@@ -54,9 +56,6 @@ int main()
 
     **/
 
-
-
-
     cout << "This is the test file for the inventory: please enter in the information which cannot be inferred at this time\ndue to this being a test file.";
     cout << "\nEnter the x coordinate here: ";
     cin >> InventoryClass::cordx;
@@ -80,6 +79,8 @@ int main()
     {
         InventoryClass::inOrOutBattle = true;
     }
+
+    system("CLS"); //clear the screen
 
     //go to the main code - this is where it would go when you actually take out the main
     run.InventoryCommand();

@@ -21,6 +21,7 @@ class InventoryClass
     static float cordx; //the coordinates for x
     static float cordy; //the coordinates for y
 
+    static int equipped; //counts how many items the user has equipped
     private:
 
 };
