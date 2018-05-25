@@ -18,51 +18,60 @@ float InventoryClass::cordy = 0;
 int InventoryClass::equipped = 0;
 
 int firstrun = 0; //makes sure that the items aren't equipped more than once
+int index = 0; //lets me go through a list and find the element im looking for
 
 character player; //temporary object for the player TAKE OUT WHEN TAYLOR'S CODE HAS BEEN COMBINED
-
+InventoryClass run;//object for running the functions from the class
 
 /**Inventory Command*/
 void InventoryClass::InventoryCommand()
 {
-
-    //object for running the functions from the class
-    InventoryClass run;
 
     //add the basic items to the player's inventory
     while(firstrun == 0)
     {
         //equip the items
         cout << "\n";
-        cout << "\nYou look in your bag and there are a mysterious three items that you don't remember being there.";
-        cout << "\n";
-        cout << "\n";
+        cout << "\nOn your back you feel a weight. You notice it's a backpack of some sort and you pull it off to look at it. \nIn your bag and there are a mysterious three items that you don't remember being there.";
+
+        cin.get();
+        system("CLS"); //clear the screen
+
         cout << stick.name << " has been equipped!";
         cout << "\n";
         cout << tatteredcloth.name << " has been equipped!";
         cout << "\n";
         cout << hppotion.name << " has been equipped!";
 
-        listOfItems.push_front(stick);
         stick.inuse = true;
-        listOfItems.push_back(tatteredcloth);
+        listOfItems.push_back(stick);
         tatteredcloth.inuse = true;
-        listOfItems.push_back(hppotion);
+        listOfItems.push_back(tatteredcloth);
         hppotion.inuse = true;
+        listOfItems.push_back(hppotion);
+        listOfItems.push_back(basicsword);
 
-        cout << "\n\nIt seems like you can only equip three items at a time, so choose wisely what ones you pick to use once you get more.";
+        //change stats based on items equipped
+        player.strength = player.strength + stick.modifyStat;
+        player.defense = player.defense + tatteredcloth.modifyStat;
+        if(player.maxHP - hppotion.modifyStat > player.HP)
+        {
+            player.HP = player.HP + hppotion.modifyStat;
+        }
+        else if(player.maxHP - hppotion.modifyStat <= player.HP)
+        {
+            player.HP = player.maxHP;
+        }
+
+        cout << "\n\nIt seems like you can only equip three items at a time, so choose wisely what ones you pick to use once you get more. \nNow lets go to your inventory and look at what you can do with these items.";
+
+        cin.get();
+        system("CLS"); //clear the screen
 
         //change character's equipped
         InventoryClass::equipped = 3;
 
-        //change the character's stats
-
-
-        //make sure that the user cannot go through this loop again
-        firstrun++;
-
-        cin.get();
-        system("CLS"); //clear the screen
+        run.ManageInventory();
     }
 
     //if user is adding an item to the inventory
@@ -91,17 +100,120 @@ In Battle:
 ******/
 void InventoryClass::ManageInventory()
 {
+    char exit; //lets the user exit the inventory
+
     /* Out of battle */
     if (inOrOutBattle == false)
     {
+        //tell them this is the inventory
+        cout << "\n\n";
+        cout << "You take a look inside your bag, it seems a bit odd since most of these items shouldn't fit in here, but you avoid questioning that for now.";
+        cout << "\nHere are all the items you see";
+        cout << "\n\n";
 
+        //show the list
+        for (list<item>::iterator itemsIterator = listOfItems.begin(); itemsIterator != listOfItems.end(); itemsIterator++)
+        {
+            item currentItem;
+            //read out the item by accessing the list then the item that is in the list then the name attached
+            //cout the index number before each item to access it
+            currentItem = *itemsIterator;
+            cout << index << ". " << currentItem.name << "\n";
+
+            //add one to index
+            index++;
+        }
+
+        //tell them the items they have equipped
+        cout << "\n\n";
+        cout << InventoryClass::equipped << " out of the 3 items you can equip at once are equipped";
+        cout << "\nThese items are: ";
+        cout << "\n";
+
+        for(list<item>::iterator itemsIterator = listOfItems.begin(); itemsIterator != listOfItems.end(); itemsIterator++)
+        {
+            item currentItem;
+            //set the current item to
+            currentItem = *itemsIterator;
+
+            //if the item is in use
+            if(currentItem.inuse)
+            {
+                cout << currentItem.name;
+                cout << "\n";
+            }
+            //if the item is not in use
+            else(currentItem.inuse)
+            {
+                cout << "it's false..." << "\n";
+            }
+        }
+
+        //do they want to continue and manage the inventory
+        cout << "\n\nDo you wish to manage your inventory or EXIT the inventory?";
+        cout << "\nType in 'e' if you wish to exit or any other key to continue: ";
+        cin >> exit;
+        cin.get();
+
+        while(exit != 'e' && exit != 'E')
+        {
+            //let them enter in the number they want to use
+            cout << "\n\nNext to each item there is a number.";
+            cout << "\nIf you wish to: ";
+            cout << "\nDelete an item, \nRead more about an item, \nUnequip an item, \nEquip an item";
+            cout << "\n\nEnter in the corresponding number to the item here: ";
+            cin >> index;
+            cin.get();
+
+            //tell them what item they choose
+
+            //if the number they entered is not valid give them an error message
+
+            //ask them what they want to do - delete, read more, unequip or equip and let them enter it in
+
+            //if they want to delete the item - must delete one from index, clear screen, reread out the list after deleting is finished
+
+            //if they want to read more about an item
+
+            //if they want to unequip an item
+
+            //if they want to use an item
+
+            //if they want to go through the loop again
+            cout << "\n\nDo you still want to manage your inventory?";
+            cout << "\nType in 'exit' if you wish to exit or any key to continue: ";
+            cin >> exit;
+            cin.get();
+
+        }
+
+        if(exit == 'e' || exit == 'E')
+        {
+            cout << "\n\nYou close your bag and continue on your journey.";
+
+            cin.get();
+            system("CLS"); //clear the screen
+        }
+
+        //if this is their first time running the program
+        if(firstrun == 0)
+        {
+            firstrun++;
+
+            cin.get();
+            system("CLS"); //clear the screen
+
+            run.InventoryCommand();
+        }
     }
+
 
     /* In Battle */
     if (inOrOutBattle == true)
     {
 
     }
+
 }
 
 /****
@@ -121,14 +233,14 @@ void InventoryClass::AddItem()
     bool chest02 = false;
     bool chest03 = false;
     bool chest04 = false;
-    bool chest_11 = false;
+    bool chestNegative11 = false;
     bool chest11 = false;
 
     /* Out of battle */
     if (inOrOutBattle == false)
     {
 
-    /* Out of battle */
+        /* Out of battle */
 
         //check each room for a chest - if they are the coordinates then they will open it - if they have opened it then set it's open or close variable true
         if(cordx == 0 && cordy == 0 && chest00 == false)
@@ -240,7 +352,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (-1,1)
-        else if(cordx == -1 && cordy == 1 && chest_11 == false)
+        else if(cordx == -1 && cordy == 1 && chestNegative11 == false)
         {
             cout << "\n\nDA DA \nA CHEST HAS BEEN FOUND";
             cout << "\n";
@@ -257,7 +369,7 @@ void InventoryClass::AddItem()
             system("CLS"); //clear the screen
 
             //chest is now open
-            chest_11 = true;
+            chestNegative11 = true;
         }
 
         //if they land on (1,1)
@@ -289,11 +401,12 @@ void InventoryClass::AddItem()
     }
 
     /* In Battle */
-    if (inOrOutBattle == true)
+    else if (inOrOutBattle == true)
     {
 
     }
 
-    //test print out list:
-
+    InventoryClass::addOrManage = 'c';
+    //return back to the main game
+    cout << "Thanks for running the test";
 }

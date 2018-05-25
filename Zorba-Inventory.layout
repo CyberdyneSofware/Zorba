@@ -2,43 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-<<<<<<< HEAD
-	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="InventoryClass.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1892" topLine="13" />
+			<Cursor1 position="8930" topLine="263" />
 		</Cursor>
 	</File>
-	<File name="Item.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4120" topLine="123" />
-=======
-	<File name="Item.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7230" topLine="198" />
+			<Cursor1 position="2952" topLine="54" />
 		</Cursor>
 	</File>
-	<File name="InventoryClass.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Item.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1968" topLine="0" />
->>>>>>> 0ade34a54d14ebeb0f1e0c087d4a0773dfed0f02
+			<Cursor1 position="3251" topLine="91" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="InventoryClass.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-<<<<<<< HEAD
-			<Cursor1 position="1999" topLine="39" />
-=======
-			<Cursor1 position="2936" topLine="48" />
->>>>>>> 0ade34a54d14ebeb0f1e0c087d4a0773dfed0f02
-		</Cursor>
-	</File>
-	<File name="InventoryClass.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-<<<<<<< HEAD
-			<Cursor1 position="954" topLine="0" />
-=======
-			<Cursor1 position="750" topLine="0" />
->>>>>>> 0ade34a54d14ebeb0f1e0c087d4a0773dfed0f02
+			<Cursor1 position="981" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
