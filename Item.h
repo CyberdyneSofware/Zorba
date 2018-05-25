@@ -47,6 +47,7 @@ struct item
     int modifyStat; //how much the item should modify
     bool inuse; //if the item is in use or not
     string message; //the message that plays when you equip it
+    int randomnum; //gives a unique number to each item which allows me to randomly generate a number
 };
 
 //item global definitions
@@ -76,7 +77,8 @@ item knife = {
     .type = 'w',
     .modifyStat = 2,
     .inuse = false,
-    .message = "Not very useful from far way, but good luck."
+    .message = "Not very useful from far way, but good luck.",
+    .randomnum = 1
 };
 
 //battle item
@@ -85,7 +87,8 @@ item genericgun = {
     .type = 'w',
     .modifyStat = 4,
     .inuse = false,
-    .message = "This is gun. Have fun. Pleb."
+    .message = "This is gun. Have fun. Pleb.",
+    .randomnum = 2
 };
 
 //chest item
@@ -103,7 +106,8 @@ item thestaff = {
     .type = 'w',
     .modifyStat = 5,
     .inuse = false,
-    .message = "Not staff as in a worker but staff as in the weapon. It's wooden except for the blade on the end which is steal."
+    .message = "Not staff as in a worker but staff as in the weapon. It's wooden except for the blade on the end which is steal.",
+    .randomnum = 3
 };
 
 //chest item
@@ -121,7 +125,8 @@ item theswordgunknife = {
     .type = 'w',
     .modifyStat = 50,
     .inuse = false,
-    .message = "This is the most OP weapon in the game. It's a sword, a gun, and a knife all at once!"
+    .message = "This is the most OP weapon in the game. It's a sword, a gun, and a knife all at once!",
+    .randomnum = 4
 };
 
 
@@ -142,7 +147,8 @@ item beret = {
     .type = 'c',
     .modifyStat = 2,
     .inuse = false,
-    .message = "It looks a bit worn, but kind of neat. Some of the string sewing it together has unraveled and is barely holding a pin to the front. \n(Are you cosplaying as Phillip?)"
+    .message = "It looks a bit worn, but kind of neat. Some of the string sewing it together has unraveled and is barely holding a pin to the front. \n(Are you cosplaying as Phillip?)",
+    .randomnum = 5
 };
 
 //battle item
@@ -151,7 +157,8 @@ item blackandwhitejacket = {
     .type = 'c',
     .modifyStat = 2,
     .inuse = false,
-    .message = "It is a thin jacket with a zipper in the front, you don't know who left this behind. \n(You can almost be as edgy as Alexi with this)"
+    .message = "It is a thin jacket with a zipper in the front, you don't know who left this behind. \n(You can almost be as edgy as Alexi with this)",
+    .randomnum = 6
 };
 
 //battle item
@@ -160,7 +167,8 @@ item bluehairdye = {
     .type = 'c',
     .modifyStat = 1,
     .inuse = false,
-    .message = "It's a tin bottle with neon blue paint across the front, on the top there is a black cap keeping it closed "
+    .message = "It's a tin bottle with neon blue paint across the front, on the top there is a black cap keeping it closed ",
+    .randomnum 7
 };
 
 //battle item
@@ -169,7 +177,8 @@ item jeanjacket = {
     .type = 'c',
     .modifyStat = 2,
     .inuse = false,
-    .message = "The Jacket is a rough material, and is a sharp dark blue color. Maybe wearing it will make you look pretty cool."
+    .message = "The Jacket is a rough material, and is a sharp dark blue color. Maybe wearing it will make you look pretty cool.",
+    .randomnum = 8
 };
 
 //chest item
@@ -187,7 +196,8 @@ item steelarmor = {
     .type = 'c',
     .modifyStat = 5,
     .inuse = false,
-    .message = "The armor is relatively heavy, and cold at the touch. Surely it'll protect you in battle"
+    .message = "The armor is relatively heavy, and cold at the touch. Surely it'll protect you in battle",
+    .randomnum = 9
 };
 
 //chest item - end game
@@ -207,7 +217,8 @@ item hppotion = {
     .type = 'h',
     .modifyStat = 15,
     .inuse = false,
-    .message = "The potion is in a small glass bottle, which has some soupy red liquid at the bottom of the bottle."
+    .message = "The potion is in a small glass bottle, which has some soupy red liquid at the bottom of the bottle.",
+    .randomnum = 10
 };
 
 //battle item
@@ -216,7 +227,8 @@ item safetycake = {
     .type = 'h',
     .modifyStat = 25,
     .inuse = false,
-    .message = "It's a obnoxiously large cake with brightly colored pink frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it."
+    .message = "It's a obnoxiously large cake with brightly colored pink frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it.",
+    .randomnum = 11
 };
 
 //chest item - end game
@@ -236,7 +248,8 @@ item magicleaf = {
     .type = 'i',
     .modifyStat = 1,
     .inuse = false,
-    .message = "It seems like just a leaf, \nbut upon closer inspection, \nit seems to be magical. Eating it may increase your intelligence somehow."
+    .message = "It seems like just a leaf, \nbut upon closer inspection, \nit seems to be magical. Eating it may increase your intelligence somehow.",
+    .randomnum = 12
 };
 
 //battle item
@@ -245,7 +258,8 @@ item largebook = {
     .type = 'i',
     .modifyStat = 4,
     .inuse = false,
-    .message = "The book is dusty so you can't see the cover, \nbut when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION. It will  "
+    .message = "The book is dusty so you can't see the cover, \nbut when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION. It will  ",
+    .randomnum = 13
 };
 
 //battle item
@@ -254,7 +268,8 @@ item thinkingcap = {
     .type = 'i',
     .modifyStat = 6,
     .inuse = false,
-    .message = "Its a hat made out of a silky fabric with paper stars taped on, very smart looking."
+    .message = "Its a hat made out of a silky fabric with paper stars taped on, very smart looking.",
+    .randomnum = 14
 };
 
 //buffs: Resistance
@@ -264,7 +279,8 @@ item woodenshield = {
     .type = 'r',
     .modifyStat = 1,
     .inuse = false,
-    .message = "The shield looks like it had just been carved out of a tree, not very sturdy, but it'll work."
+    .message = "The shield looks like it had just been carved out of a tree, not very sturdy, but it'll work.",
+    .randomnum = 15
 };
 
 //battle item
@@ -273,7 +289,8 @@ item antiintelligencepotion = {
     .type = 'r',
     .modifyStat = 5,
     .inuse = false,
-    .message = "It's a potion which makes intelligence attacks less effective and increases your resistance."
+    .message = "It's a potion which makes intelligence attacks less effective and increases your resistance.",
+    .randomnum = 16
 };
 
 

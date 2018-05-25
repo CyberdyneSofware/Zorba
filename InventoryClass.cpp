@@ -142,11 +142,7 @@ void InventoryClass::ManageInventory()
                 cout << currentItem.name;
                 cout << "\n";
             }
-            //if the item is not in use
-            else(currentItem.inuse)
-            {
-                cout << "it's false..." << "\n";
-            }
+
         }
 
         //do they want to continue and manage the inventory
@@ -200,9 +196,6 @@ void InventoryClass::ManageInventory()
         {
             firstrun++;
 
-            cin.get();
-            system("CLS"); //clear the screen
-
             run.InventoryCommand();
         }
     }
@@ -211,6 +204,12 @@ void InventoryClass::ManageInventory()
     /* In Battle */
     if (inOrOutBattle == true)
     {
+        //battle is finished
+        //assign a number to each item that is not yet been assigned a chest or to the main character yet
+
+
+        //get a random number from that pool and then use the item that corresponds with it
+
 
     }
 
