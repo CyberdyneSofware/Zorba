@@ -125,7 +125,7 @@ void InventoryClass::ManageInventory()
     srand(time(NULL)); //generates a more true random number
 
     ///out of battle
-    if (inOrOutBattle == false)
+    if (inOrOutBattle == false || firstrun == 0)
     {
         //tell them this is the inventory
         cout << "You take a look inside your bag, it seems a bit odd since most of these items shouldn't fit in here.\nBut you avoid questioning that for now.";
@@ -585,38 +585,9 @@ void InventoryClass::ManageInventory()
         }
     }
 
-    ///in battle
-    if (inOrOutBattle == true)
+    ///if they are in battle
+    else if (inOrOutBattle == true)
     {
-        int generatedNum = 0; //holds the number generated
-        int rareItemGenerator = 0; //holds the number that will determine if the item will rare or not
-
-        //assign a number to each item that is not yet been assigned a chest or to the main character yet
-        rareItemGenerator = (rand()/10) + 1;
-
-        //60% chance of getting a normal item
-        if(rareItemGenerator < 7)
-        {
-            generatedNum = (rand()/7)+1;
-        }
-
-        //40% chance of getting a rare item
-        else if(rareItemGenerator >= 7)
-        {
-            generatedNum = (rand()/15)+8;
-        }
-
-        cout << "The number generated was" << generatedNum;
-        //get a random number from that pool and then use the item that corresponds with it
-
-
-        //if this is their first time running the program
-        if(firstrun == 0)
-        {
-            firstrun++;
-
-            run.InventoryCommand();
-        }
 
     }
 
@@ -816,31 +787,25 @@ void InventoryClass::AddItem()
         int rareItemGenerator = 0; //holds the number that will determine if the item will rare or not
 
         //assign a number to each item that is not yet been assigned a chest or to the main character yet
-        rareItemGenerator = (rand()/10) + 1;
+        rareItemGenerator = (rand()%10) + 1;
 
         //60% chance of getting a normal item
         if(rareItemGenerator < 7)
         {
-            generatedNum = (rand()/7)+1;
+            generatedNum = (rand()%7)+1;
         }
 
         //40% chance of getting a rare item
         else if(rareItemGenerator >= 7)
         {
-            generatedNum = (rand()/15)+8;
+            generatedNum = (rand()%15)+8;
         }
 
-        cout << "The number generated was" << generatedNum;
+        //debug cout << "The number generated was" << generatedNum;
         //get a random number from that pool and then use the item that corresponds with it
 
 
         //if this is their first time running the program
-        if(firstrun == 0)
-        {
-            firstrun++;
-
-            run.InventoryCommand();
-        }
     }
 
     InventoryClass::addOrManage = 'c';
