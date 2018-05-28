@@ -1,16 +1,18 @@
 # depslib dependency file v1.0
-1527224965 source:c:\users\kenzie\desktop\zorba\inventoryclass.cpp
+1527481594 source:c:\users\kenzie\desktop\zorba\inventoryclass.cpp
 	<iostream>
 	<string.h>
 	<list>
 	<stdlib.h>
+	<cstdlib>
 	"InventoryClass.h"
-	"Item.h"
+	<ctime>
 
-1527131804 c:\users\kenzie\desktop\zorba\inventoryclass.h
+1527455518 c:\users\kenzie\desktop\zorba\inventoryclass.h
 	<iostream>
 	<string.h>
 	<list>
+	"Item.h"
 
 1527133317 source:c:\users\kenzie\desktop\zorba\main.cpp
 	<iostream>
@@ -21,7 +23,7 @@
 	"InventoryClass.h"
 	"InventoryClass.h"
 
-1527133607 c:\users\kenzie\desktop\zorba\item.h
+1527455398 c:\users\kenzie\desktop\zorba\item.h
 	<iostream>
 	<list>
 	<string.h>
@@ -50,5 +52,8 @@
 	<string.h>
 	<list>
 	"InventoryClass.h"
+	"Item.h"
+
+1527475868 source:c:\users\kenzie\desktop\zorba\item.cpp
 	"Item.h"
 

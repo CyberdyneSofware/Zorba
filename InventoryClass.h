@@ -5,6 +5,8 @@
 #include <string.h>
 #include <list>
 
+#include "Item.h"
+
 using namespace std;
 
 class InventoryClass
@@ -22,6 +24,10 @@ class InventoryClass
     static float cordy; //the coordinates for y
 
     static int equipped; //counts how many items the user has equipped
+
+    static item choosenItem; //stores the current item used for managing inventory
+
+    static list<item>::iterator itemsIterator; //starts the items iterator at the beginning of the list
     private:
 
 };
