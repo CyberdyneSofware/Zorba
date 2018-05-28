@@ -25,7 +25,7 @@ class InventoryClass
 
     static int equipped; //counts how many items the user has equipped
 
-    static item choosenItem; //stores the current item used for managing inventory
+    static item *chosenItemPtr; //points to the item the user choses to manage
 
     static list<item>::iterator itemsIterator; //starts the items iterator at the beginning of the list
     private:
