@@ -85,5 +85,6 @@ int main()
     //go to the main code - this is where it would go when you actually take out the main
     run.InventoryCommand();
 
+    cout << "\n\nThanks for running the test";
     return 0;
 }
