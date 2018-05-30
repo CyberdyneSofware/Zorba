@@ -28,6 +28,8 @@ class InventoryClass
     static item *chosenItemPtr; //points to the item the user choses to manage
 
     static list<item>::iterator itemsIterator; //starts the items iterator at the beginning of the list
+
+
     private:
 
 };

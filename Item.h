@@ -77,5 +77,6 @@ extern item antiintelligencepotion;
 
 /* LINKED LIST */
 extern list<item> listOfItems;
+extern list<item> randItemPool;
 
 #endif

@@ -257,3 +257,4 @@ item antiintelligencepotion = {
 };
 
 list<item> listOfItems; //list of items
+list<item> randItemPool = {knife, genericgun, thestaff, beret, blackandwhitejacket, bluehairdye, jeanjacket, steelarmor, hppotion, safetycake, magicleaf, largebook, thinkingcap, woodenshield, antiintelligencepotion}; //holds all the items that can be randomly generated in a pool so they can be gone through

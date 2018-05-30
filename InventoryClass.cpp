@@ -8,7 +8,7 @@
 
 using namespace std;
 
-/*GLOBAL VARIABLES FROM THE CLASS*/
+/****GLOBAL VARIABLES FROM THE CLASS*******/
 char InventoryClass::addOrManage = 'A';
 bool InventoryClass::inOrOutBattle = false;
 
@@ -18,6 +18,7 @@ float InventoryClass::cordy = 0;
 int InventoryClass::equipped = 0;
 item *InventoryClass::chosenItemPtr;
 list<item>::iterator InventoryClass::itemsIterator;
+/******************************************/
 
 int firstrun = 0; //makes sure that the items aren't equipped more than once
 int index = 0; //lets me go through a list and find the element im looking for
@@ -42,12 +43,11 @@ void InventoryClass::InventoryCommand()
 
         cin.get();
         system("CLS"); //clear the screen
-
-        cout << stick.name << " has been equipped!";
+        cout << "   " << stick.name << " has been equipped!";
         cout << "\n";
-        cout << tatteredcloth.name << " has been equipped!";
+        cout << "   " << tatteredcloth.name << " has been equipped!";
         cout << "\n";
-        cout << hppotion.name << " has been used!";
+        cout << "   " << hppotion.name << " has been used!";
 
         stick.inuse = true;
         listOfItems.push_back(stick);
@@ -91,16 +91,18 @@ void InventoryClass::InventoryCommand()
 
     ///normal run
     //if user is adding an item to the inventory
-    if(addOrManage == 'a' || addOrManage == 'A')
+    if(addOrManage == 'a' && addOrManage == 'A')
     {
         run.AddItem();
     }
 
     //if user is managing inventory
-    if(addOrManage == 'b' || addOrManage == 'B')
+    else if(addOrManage == 'b' && addOrManage == 'B')
     {
         run.ManageInventory();
     }
+
+
 
 }
 
@@ -122,16 +124,33 @@ void InventoryClass::ManageInventory()
 {
     char exit; //lets the user exit the inventory
     char manageAction; //lets the user enter what they want to do to the item they choose
-    srand(time(NULL)); //generates a more true random number
 
-    ///out of battle
-    if (InventoryClass::inOrOutBattle == false || firstrun == 0)
+    //check to see if they have items
+    index = 0;
+    for(InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
     {
+        index++;
+    }
+
+    //if they don't have items
+    if(index == 0)
+    {
+        cout << "There was nothing in your inventory so you can't manage anything. Come back when you got some items scrub.";
+        InventoryClass::addOrManage = 'c';
+        firstrun++;
+    }
+
+    //of they have items
+    else if(index != 0)
+    {
+
         //tell them this is the inventory
         cout << "You take a look inside your bag, it seems a bit odd since most of these items shouldn't fit in here.\nBut you avoid questioning that for now.";
         cout << "\n\nHere are all the items you see: ";
         cout << "\n";
 
+        index = 0;
+        cout << "------------------------------Inventory--------------------------------\n";
         //show the list
         for (InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
         {
@@ -144,14 +163,14 @@ void InventoryClass::ManageInventory()
             //add one to index
             index++;
         }
-
+        cout << "------------------------------------------------------------------------";
         cin.get();//next screen
 
         //tell them the items they have equipped
         cout << "\n\n";
-        cout << InventoryClass::equipped << " /3 are equipped";
+        cout << InventoryClass::equipped << "/3 are equipped";
         cout << "\n";
-
+        cout << "-----------------------------In-use-------------------------------------\n";
         for(InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
         {
             item currentItem;
@@ -166,7 +185,7 @@ void InventoryClass::ManageInventory()
             }
 
         }
-
+        cout << "------------------------------------------------------------------------";
         cin.get();//next screen
 
         ///exit possibility
@@ -179,389 +198,421 @@ void InventoryClass::ManageInventory()
 
         while(exit != 'e' && exit != 'E')
         {
-            do
+            //check to see if they have items
+            index = 0;
+            for(InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
             {
-                cout << "Here are all the items in your inventory again: ";
-                cout << "\n";
-                index = 0;
-
-                //show the list
-                for (InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
-                {
-                    item currentItem;
-                    //read out the item by accessing the list then the item that is in the list then the name attached
-                    //cout the index number before each item to access it
-                    currentItem = *InventoryClass::itemsIterator;
-                    cout << index << ". " << currentItem.name << "\n";
-
-                    //add one to index
-                    index++;
-                }
-
-                error = false;
-                //let them enter in the number they want to use
-                cout << "\n\nEnter the number that is next to the item you want to edit or view: ";
-                cin >> index;
-                cin.get();
-
-                InventoryClass::itemsIterator = listOfItems.begin();
-
-                //if the number they entered is not valid give them an error message
-                if (index > listOfItems.size())
-                {
-                    cout << "\nThe number you entered is invalid. Please enter again.";
-                    error = true;
-                }
-
-            }while(error == true);
-
-            //tell them what item they choose
-            for(int loopcounter = 0; loopcounter <= index; ++loopcounter)
-            {
-
-                //if the item is the one the user wants
-                if(loopcounter == index)
-                {
-                    InventoryClass::chosenItemPtr = &*InventoryClass::itemsIterator;
-                    cout << "\n\nThe item you choose is: ";
-                    cout << InventoryClass::chosenItemPtr->name;
-                }
-                itemsIterator++;
-
+                index++;
             }
 
-            cin.get(); //next text block
-
-            do
+            //if they don't have items
+            if(index == 0)
             {
-                error = false;
-                //ask them what they want to do - delete, read more, unequip or equip and let them enter it in
-                ///letting them manage their inventory
-                cout << "\nENTER the letter next to the action you want to do.";
-                cout << "\nt/Throw out the item";
-                cout << "\nr/read about the item";
-                cout << "\nu/Un-equip the item";
-                cout << "\ne/equip/use the item";
-                cout << "\nEnter here: ";
-                cin >> manageAction;
-                cin.get();
+                cout << "There was nothing in your inventory so you can't manage anything. Come back when you got some items scrub.";
+                InventoryClass::addOrManage = 'c';
+                firstrun++;
+                exit = 'e';
+            }
 
-                //if they type in the wrong letter
-                if(manageAction != 't' && manageAction != 'r' && manageAction != 'u' && manageAction != 'e')
+            else if(index != 0)
+            {
+                do
                 {
-                    cout << "\nThe letter you entered was invalid. Please enter again.";
+
+                    cout << "Here are all the items in your inventory again: ";
                     cout << "\n";
-                    error = true;
+                    index = 0;
+
+                    //show the list
+                    cout << "------------------------------Inventory--------------------------------\n";
+                    for (InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
+                    {
+                        item currentItem;
+                        //read out the item by accessing the list then the item that is in the list then the name attached
+                        //cout the index number before each item to access it
+                        currentItem = *InventoryClass::itemsIterator;
+                        cout << index << ". " << currentItem.name << "\n";
+
+                        //add one to index
+                        index++;
+                    }
+                    cout << "------------------------------------------------------------------------";
+
+                    error = false;
+                    //let them enter in the number they want to use
+                    cout << "\n\nEnter the number that is next to the item you want to edit or view: ";
+                    cin >> index;
+                    cin.get();
+
+                    InventoryClass::itemsIterator = listOfItems.begin();
+
+                    //if the number they entered is not valid give them an error message
+                    if (index > listOfItems.size())
+                    {
+                        cout << "\nThe number you entered is invalid. Please enter again.";
+                        error = true;
+                    }
+
+                }while(error == true);
+
+                //tell them what item they choose
+                for(int loopcounter = 0; loopcounter <= index; ++loopcounter)
+                {
+
+                    //if the item is the one the user wants
+                    if(loopcounter == index)
+                    {
+                        InventoryClass::chosenItemPtr = &*InventoryClass::itemsIterator;
+                        cout << "\n\nThe item you choose is: ";
+                        cout << InventoryClass::chosenItemPtr->name;
+                    }
+                    itemsIterator++;
+
                 }
 
-            }while(error == true);
+                cin.get(); //next text block
 
-            ///deleting an item
-            //if they want to delete the item - must delete one from index, clear screen, reread out the list after deleting is finished
-            if (manageAction == 't')
-            {
-                system("CLS"); //clear the screen
-                cout << "You throw out the item and your back feels a bit lighter here's what is left:\n";
-
-                //if the item is equipped - unequip it and subtract from the equipped items
-                if(InventoryClass::chosenItemPtr->inuse)
+                do
                 {
-                    InventoryClass::chosenItemPtr->inuse = false; //unequip the item
-                    InventoryClass::equipped = InventoryClass::equipped - 1; //subtract from the equipped items
+                    error = false;
+                    //ask them what they want to do - delete, read more, unequip or equip and let them enter it in
+                    ///letting them manage their inventory
+                    cout << "-----------------------------Inventory-Actions--------------------------\n";
+                    cout << "ENTER the letter next to the action you want to do.";
+                    cout << "\nt/Throw out the item";
+                    cout << "\nr/read about the item";
+                    cout << "\nu/Un-equip the item";
+                    cout << "\ne/equip/use the item";
+                    cout << "\n------------------------------------------------------------------------";
+                    cout << "\nEnter here: ";
+                    cin >> manageAction;
+                    cin.get();
 
-                    //if the stats to go with the deletion
+                    //if they type in the wrong letter
+                    if(manageAction != 't' && manageAction != 'r' && manageAction != 'u' && manageAction != 'e')
+                    {
+                        cout << "\nThe letter you entered was invalid. Please enter again.";
+                        cout << "\n";
+                        error = true;
+                    }
+
+                }while(error == true);
+
+                ///deleting an item
+                //if they want to delete the item - must delete one from index, clear screen, reread out the list after deleting is finished
+                if (manageAction == 't')
+                {
+                    system("CLS"); //clear the screen
+                    cout << "You throw out the item and your back feels a bit lighter here's what is left:\n";
+
+                    //if the item is equipped - unequip it and subtract from the equipped items
+                    if(InventoryClass::chosenItemPtr->inuse)
+                    {
+                        InventoryClass::chosenItemPtr->inuse = false; //unequip the item
+                        InventoryClass::equipped = InventoryClass::equipped - 1; //subtract from the equipped items
+
+                        //if the stats to go with the deletion
+                        //if it modifies strength
+                        cout << "\nthe item you threw out was equipped. Here is how it effected your stats: ";
+                        if (InventoryClass::chosenItemPtr->type == 'w')
+                        {
+                            cout << "\n\n   STRENGTH: " << player.strength;
+                            player.strength = player.strength - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.strength;
+                        }
+
+                        //if it modifies defense
+                        else if(InventoryClass::chosenItemPtr->type == 'c')
+                        {
+                            cout << "\n\n   DEFENSE: " << player.defense;
+                            player.defense = player.defense - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.defense;
+                        }
+
+                        //if it modifies intelligence
+                        else if(InventoryClass::chosenItemPtr->type == 'i')
+                        {
+                            cout << "\n\n   INTELLIGENCE: " << player.intelligence;
+                            player.intelligence = player.intelligence - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.intelligence;
+                        }
+
+                        //if it  modifies resistance
+                        else if (InventoryClass::chosenItemPtr->type == 'r')
+                        {
+                            cout << "\n\n   RESISTANCE: ";
+                            player.resistance = player.resistance - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.resistance;
+                        }
+
+                    }
+
+                    //set the iterator back
+                    InventoryClass::itemsIterator--;
+
+                    //delete the item
+                    listOfItems.erase(InventoryClass::itemsIterator);
+
+                    index = 0; //clear the index
+                    cout << "\n\n";
+
+                    cout << "Here is your inventory now\n";
+                    //show them the new inventory
+                    for (InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
+                    {
+                        item currentItem;
+
+                        //read out the item by accessing the list then the item that is in the list then the name attached
+                        //cout the index number before each item to access it
+                        currentItem = *InventoryClass::itemsIterator;
+                        cout << index << ". " << currentItem.name << "\n";
+
+                        //add one to index
+                        index++;
+                    }
+
+                    cin.get();
+                    system("CLS");
+
+                }
+
+                ///reading more about an item
+                //if they want to read more about an item
+                else if (manageAction == 'r')
+                {
+                    system("CLS");
+                    cout << "\n" << InventoryClass::chosenItemPtr->name;
+                    //read out how much of the stat if modifies
+                    cout << "\n   Adds " << InventoryClass::chosenItemPtr->modifyStat << "pt -->  ";
+
+                    //read out what it modifies
                     //if it modifies strength
-                    cout << "\nthe item you threw out was equipped. Here is how it effected your stats: ";
                     if (InventoryClass::chosenItemPtr->type == 'w')
                     {
-                        cout << "\n\n   STRENGTH: " << player.strength;
-                        player.strength = player.strength - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.strength;
+                        cout << " STRENGTH.";
                     }
 
                     //if it modifies defense
                     else if(InventoryClass::chosenItemPtr->type == 'c')
                     {
-                        cout << "\n\n   DEFENSE: " << player.defense;
-                        player.defense = player.defense - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.defense;
-                    }
-
-                    //if it modifies intelligence
-                    else if(InventoryClass::chosenItemPtr->type == 'i')
-                    {
-                        cout << "\n\n   INTELLIGENCE: " << player.intelligence;
-                        player.intelligence = player.intelligence - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.intelligence;
-                    }
-
-                    //if it  modifies resistance
-                    else if (InventoryClass::chosenItemPtr->type == 'r')
-                    {
-                        cout << "\n\n   RESISTANCE: ";
-                        player.resistance = player.resistance - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.resistance;
-                    }
-
-                }
-
-                //set the iterator back
-                InventoryClass::itemsIterator--;
-
-                //delete the item
-                listOfItems.erase(InventoryClass::itemsIterator);
-
-                index = 0; //clear the index
-                cout << "\n\n";
-
-                //show them the new inventory
-                for (InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
-                {
-                    item currentItem;
-
-                    //read out the item by accessing the list then the item that is in the list then the name attached
-                    //cout the index number before each item to access it
-                    currentItem = *InventoryClass::itemsIterator;
-                    cout << index << ". " << currentItem.name << "\n";
-
-                    //add one to index
-                    index++;
-                }
-
-
-            }
-
-            ///reading more about an item
-            //if they want to read more about an item
-            else if (manageAction == 'r')
-            {
-                system("CLS");
-                cout << "\n" << InventoryClass::chosenItemPtr->name;
-                //read out how much of the stat if modifies
-                cout << "\nAdds " << InventoryClass::chosenItemPtr->modifyStat << " -->  ";
-
-                //read out what it modifies
-                //if it modifies strength
-                if (InventoryClass::chosenItemPtr->type == 'w')
-                {
-                    cout << " STRENGTH.";
-                }
-
-                //if it modifies defense
-                else if(InventoryClass::chosenItemPtr->type == 'c')
-                {
-                    cout << " DEFENSE.";
-                }
-
-                //if it modifies hp
-                else if(InventoryClass::chosenItemPtr->type == 'h')
-                {
-                    cout << " HP.";
-                }
-
-                //if it modifies intelligence
-                else if(InventoryClass::chosenItemPtr->type == 'i')
-                {
-                    cout << " INTELLIGENCE.";
-                }
-
-                //if it  modifies resistance
-                else if (InventoryClass::chosenItemPtr->type == 'r')
-                {
-                    cout << " RESISTANCE.";
-                }
-
-            }
-
-            ///to unequip an item
-            //if they want to unequip an item
-            else if (manageAction == 'u')
-            {
-
-                if(InventoryClass::chosenItemPtr->inuse)
-                {
-                    //set in use to false
-                    InventoryClass::chosenItemPtr->inuse = false;
-
-                    //edit equipped items
-                    InventoryClass::equipped--;
-
-                    //change the stats accordingly
-                    //if it modifies strength
-                    if (InventoryClass::chosenItemPtr->type == 'w')
-                    {
-                        cout << "\n\n" <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
-                        cout << "\n\n   STRENGTH: " << player.strength;
-                        player.strength = player.strength - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.strength;
-                    }
-
-                    //if it modifies defense
-                    else if(InventoryClass::chosenItemPtr->type == 'c')
-                    {
-                        cout << "\n\n" <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
-                        cout << "\n\n   DEFENSE: " << player.defense;
-                        player.defense = player.defense - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.defense;
-                    }
-
-                    //if it modifies intelligence
-                    else if(InventoryClass::chosenItemPtr->type == 'i')
-                    {
-                        cout << "\n\n" <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
-                        cout << "\n\n   INTELLIGENCE: " << player.intelligence;
-                        player.intelligence = player.intelligence - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.intelligence;
-                    }
-
-                    //if it  modifies resistance
-                    else if (InventoryClass::chosenItemPtr->type == 'r')
-                    {
-                        cout << "\n\n" <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
-                        cout << "\n\n   RESISTANCE: " << player.resistance;
-                        player.resistance = player.resistance - InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.resistance;
-                    }
-                }
-                else
-                {
-                    cout << "\nThat Item is already unequipped";
-                }
-            }
-
-
-            ///using for equipping an item
-            //if they want to use an item
-            else if (manageAction == 'e')
-            {
-                //if the item is already in use
-                if(InventoryClass::chosenItemPtr->inuse)
-                {
-                    cout << "\nThat item is already equipped";
-                }
-
-                //check to see if they have room to equip
-                else if(InventoryClass::equipped == 3)
-                {
-                    cout << "\nYou cannot equip or use any more items.";
-                }
-
-                //if the item can be equipped
-                else
-                {
-                    //set use to true
-                    InventoryClass::chosenItemPtr->inuse = true;
-                    InventoryClass::equipped++;
-
-                    //modify stats
-                    if (InventoryClass::chosenItemPtr->type == 'w')
-                    {
-                        cout << "\n\n" << InventoryClass::chosenItemPtr->name << " has been equipped.";
-                        //show how much the equip effected the stats
-                        cout << "\n\n  STRENGTH: " << player.strength;
-                        player.strength = player.strength + InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.strength;
-
-                        //set inuse
-                        InventoryClass::chosenItemPtr->inuse = true;
-                    }
-
-                    //if it modifies defense
-                    else if(InventoryClass::chosenItemPtr->type == 'c')
-                    {
-                        cout << "\n\n" << InventoryClass::chosenItemPtr->name << " has been equipped.";
-                        //show how much the equip effected the stats
-                        cout << "\n\n   DEFENSE: " << player.defense;
-                        player.defense = player.defense + InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.defense;
-
-                        //set inuse
-                        InventoryClass::chosenItemPtr->inuse = true;
+                        cout << " DEFENSE.";
                     }
 
                     //if it modifies hp
                     else if(InventoryClass::chosenItemPtr->type == 'h')
                     {
-                        InventoryClass::equipped--; //subtract from equipped
-
-                        //show how much the equip effected the stats
-                        //use the hp potion
-                        if(player.maxHP - InventoryClass::chosenItemPtr->modifyStat > player.HP)
-                        {
-                            cout << "\n\n   HP: " << player.HP;
-                            player.HP = player.HP + InventoryClass::chosenItemPtr->modifyStat;
-                            cout << "  -->  " << player.HP;
-                        }
-                        else if(player.maxHP - InventoryClass::chosenItemPtr->modifyStat <= player.HP)
-                        {
-                            cout << "\n\n   HP: " << player.HP;
-                            player.HP = player.maxHP;
-                            cout << "  -->  " << player.HP;
-                        }
-
-                        cout << "\nHP has been recovered.";
-                        //delete the item from the inventory after
-                        //set the iterator back
-                        InventoryClass::itemsIterator--;
-
-                        //delete the item
-                        listOfItems.erase(InventoryClass::itemsIterator);
-
-                        index = 0; //clear the index
-
-
+                        cout << " HP.";
                     }
 
                     //if it modifies intelligence
                     else if(InventoryClass::chosenItemPtr->type == 'i')
                     {
-                        cout << "\n\n" << InventoryClass::chosenItemPtr->name << " has been equipped.";
-                        //show how much the equip effected the stats
-                        cout << "\n\n   INTELLIGENCE: " << player.intelligence;
-                        player.intelligence = player.intelligence + InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.intelligence;
-
-                        //set inuse
-                        InventoryClass::chosenItemPtr->inuse = true;
+                        cout << " INTELLIGENCE.";
                     }
 
                     //if it  modifies resistance
                     else if (InventoryClass::chosenItemPtr->type == 'r')
                     {
-                        cout << "\n\n" << InventoryClass::chosenItemPtr->name << " has been equipped.";
-                        //show how much the equip effected the stats
-                        cout << "\n\n   RESISTANCE: " << player.resistance;
-                        player.resistance = player.resistance + InventoryClass::chosenItemPtr->modifyStat;
-                        cout << "  -->  " << player.resistance;
-
-                        //set inuse
-                        InventoryClass::chosenItemPtr->inuse = true;
+                        cout << " RESISTANCE.";
                     }
 
-                    //show the items that are equipped
-                    cout << "\n\nHere are your equipped items: ";
+                }
 
-                    //tell them the items they have equipped
-                    cout << "\n\n";
-                    cout << InventoryClass::equipped << " /3 items are equipped:";
-                    cout << "\n";
+                ///to unequip an item
+                //if they want to unequip an item
+                else if (manageAction == 'u')
+                {
 
-                    for(InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
+                    if(InventoryClass::chosenItemPtr->inuse)
                     {
-                        item currentItem;
-                        //set the current item to
-                        currentItem = *InventoryClass::itemsIterator;
+                        //set in use to false
+                        InventoryClass::chosenItemPtr->inuse = false;
 
-                        //if the item is in use
-                        if(currentItem.inuse)
+                        //edit equipped items
+                        InventoryClass::equipped--;
+
+                        //change the stats accordingly
+                        //if it modifies strength
+                        if (InventoryClass::chosenItemPtr->type == 'w')
                         {
-                            cout << currentItem.name;
-                            cout << "\n";
+                            cout << "\n\n   " <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
+                            cout << "\n\n   STRENGTH: " << player.strength;
+                            player.strength = player.strength - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.strength;
                         }
 
+                        //if it modifies defense
+                        else if(InventoryClass::chosenItemPtr->type == 'c')
+                        {
+                            cout << "\n\n   " <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
+                            cout << "\n\n   DEFENSE: " << player.defense;
+                            player.defense = player.defense - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.defense;
+                        }
+
+                        //if it modifies intelligence
+                        else if(InventoryClass::chosenItemPtr->type == 'i')
+                        {
+                            cout << "\n\n   " <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
+                            cout << "\n\n   INTELLIGENCE: " << player.intelligence;
+                            player.intelligence = player.intelligence - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.intelligence;
+                        }
+
+                        //if it  modifies resistance
+                        else if (InventoryClass::chosenItemPtr->type == 'r')
+                        {
+                            cout << "\n\n   " <<InventoryClass::chosenItemPtr->name << " has been unequipped.";
+                            cout << "\n\n   RESISTANCE: " << player.resistance;
+                            player.resistance = player.resistance - InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.resistance;
+                        }
+                    }
+                    else
+                    {
+                        cout << "\nThat Item is already unequipped";
                     }
                 }
-            }
+
+
+                ///using for equipping an item
+                //if they want to use an item
+                else if (manageAction == 'e')
+                {
+                    //if the item is already in use
+                    if(InventoryClass::chosenItemPtr->inuse)
+                    {
+                        cout << "\n   " << InventoryClass::chosenItemPtr->name <<" is already equipped";
+                    }
+
+                    //check to see if they have room to equip
+                    else if(InventoryClass::equipped == 3)
+                    {
+                        cout << "\n   You cannot equip or use any more items.";
+                    }
+
+                    //if the item can be equipped
+                    else
+                    {
+                        //set use to true
+                        InventoryClass::chosenItemPtr->inuse = true;
+                        InventoryClass::equipped++;
+
+                        //modify stats
+                        if (InventoryClass::chosenItemPtr->type == 'w')
+                        {
+                            cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " has been equipped.";
+                            //show how much the equip effected the stats
+                            cout << "\n\n  STRENGTH: " << player.strength;
+                            player.strength = player.strength + InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.strength;
+
+                            //set inuse
+                            InventoryClass::chosenItemPtr->inuse = true;
+                        }
+
+                        //if it modifies defense
+                        else if(InventoryClass::chosenItemPtr->type == 'c')
+                        {
+                            cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " has been equipped.";
+                            //show how much the equip effected the stats
+                            cout << "\n\n   DEFENSE: " << player.defense;
+                            player.defense = player.defense + InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.defense;
+
+                            //set inuse
+                            InventoryClass::chosenItemPtr->inuse = true;
+                        }
+
+                        //if it modifies hp
+                        else if(InventoryClass::chosenItemPtr->type == 'h')
+                        {
+                            InventoryClass::equipped--; //subtract from equipped
+
+                            //show how much the equip effected the stats
+                            //use the hp potion
+                            if(player.maxHP - InventoryClass::chosenItemPtr->modifyStat > player.HP)
+                            {
+                                cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " was used.";
+                                cout << "\n\n   HP: " << player.HP;
+                                player.HP = player.HP + InventoryClass::chosenItemPtr->modifyStat;
+                                cout << "  -->  " << player.HP;
+                            }
+                            else if(player.maxHP - InventoryClass::chosenItemPtr->modifyStat <= player.HP)
+                            {
+                                cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " was used.";
+                                cout << "\n\n   HP: " << player.HP;
+                                player.HP = player.maxHP;
+                                cout << "  -->  " << player.HP;
+                            }
+
+                            cout << "\nHP has been recovered.";
+                            //delete the item from the inventory after
+                            //set the iterator back
+                            InventoryClass::itemsIterator--;
+
+                            //delete the item
+                            listOfItems.erase(InventoryClass::itemsIterator);
+
+                            index = 0; //clear the index
+
+
+                        }
+
+                        //if it modifies intelligence
+                        else if(InventoryClass::chosenItemPtr->type == 'i')
+                        {
+                            cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " has been equipped.";
+                            //show how much the equip effected the stats
+                            cout << "\n\n   INTELLIGENCE: " << player.intelligence;
+                            player.intelligence = player.intelligence + InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.intelligence;
+
+                            //set inuse
+                            InventoryClass::chosenItemPtr->inuse = true;
+                        }
+
+                        //if it  modifies resistance
+                        else if (InventoryClass::chosenItemPtr->type == 'r')
+                        {
+                            cout << "\n\n   " << InventoryClass::chosenItemPtr->name << " has been equipped.";
+                            //show how much the equip effected the stats
+                            cout << "\n\n   RESISTANCE: " << player.resistance;
+                            player.resistance = player.resistance + InventoryClass::chosenItemPtr->modifyStat;
+                            cout << "  -->  " << player.resistance;
+
+                            //set inuse
+                            InventoryClass::chosenItemPtr->inuse = true;
+                        }
+
+                        cout << "-----------------------------In-use-------------------------------------\n";
+                        //show the items that are equipped
+                        cout << "\n\nHere are your equipped items: ";
+
+                        //tell them the items they have equipped
+                        cout << "\n\n";
+                        cout << InventoryClass::equipped << "/3 items are equipped:";
+                        cout << "------------------------------------------------------------------------";
+                        cout << "\n";
+
+                        for(InventoryClass::itemsIterator = listOfItems.begin(); InventoryClass::itemsIterator != listOfItems.end(); InventoryClass::itemsIterator++)
+                        {
+                            item currentItem;
+                            //set the current item to
+                            currentItem = *InventoryClass::itemsIterator;
+
+                            //if the item is in use
+                            if(currentItem.inuse)
+                            {
+                                cout << currentItem.name;
+                                cout << "\n";
+                            }
+
+                        }
+                    }
+
+                }
+
 
             //if they want to go through the loop again
             cout << "\n\nDo you still want to manage your inventory?";
@@ -569,16 +620,13 @@ void InventoryClass::ManageInventory()
             cin >> exit;
             cin.get();
             system("CLS");
+            }
 
         }
 
     }
 
-    ///if they are in battle
-    else if (InventoryClass::inOrOutBattle == true )
-    {
 
-    }
 
     //if they want to exit
     if(exit == 'e' || exit == 'E')
@@ -591,7 +639,10 @@ void InventoryClass::ManageInventory()
     //if this is their first time running the program
     if(firstrun == 0)
     {
-
+        if(InventoryClass::addOrManage == 'b')
+        {
+            InventoryClass::addOrManage = 'c';
+        }
         firstrun++;
         run.InventoryCommand();
     }
@@ -615,6 +666,7 @@ In Battle:
 *****/
 void InventoryClass::AddItem()
 {
+    srand(time(NULL)); //generates a more true random number
     //chest is open - true  chest is closed - false
     bool chest00 = false;
     bool chest01 = false;
@@ -795,25 +847,38 @@ void InventoryClass::AddItem()
         int rareItemGenerator = 0; //holds the number that will determine if the item will rare or not
 
         //assign a number to each item that is not yet been assigned a chest or to the main character yet
+
         rareItemGenerator = (rand()%10) + 1;
 
         //60% chance of getting a normal item
         if(rareItemGenerator < 7)
         {
-            generatedNum = (rand()%7)+1;
+            generatedNum = rand()% 6 + 1; // 6 to 1
         }
 
         //40% chance of getting a rare item
         else if(rareItemGenerator >= 7)
         {
-            generatedNum = (rand()%15)+8;
+            generatedNum = rand()% 9 + 7;
         }
 
         //debug cout << "The number generated was" << generatedNum;
+
         //get a random number from that pool and then use the item that corresponds with it
+        for(InventoryClass::itemsIterator = randItemPool.begin(); InventoryClass::itemsIterator != randItemPool.end(); InventoryClass::itemsIterator++)
+        {
 
+            InventoryClass::chosenItemPtr = &*InventoryClass::itemsIterator;
 
-        //if this is their first time running the program
+            //if the generated number was the same as the number associated with the item
+            if(InventoryClass::chosenItemPtr->randomnum == generatedNum)
+            {
+                cout << "The enemy falls to the ground and drops an item.";
+                cout << "\n" << InventoryClass::chosenItemPtr->name << " has been added to your inventory.";
+                listOfItems.push_back(*InventoryClass::chosenItemPtr);
+            }
+        }
+
     }
 
     //so it doesn't run twice
