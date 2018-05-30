@@ -1506,7 +1506,7 @@ void levelUp()
     //Display new HP
     cout << "HP         " << player.maxHP << " --> ";
 
-    player.maxHP = player.maxHP + (2*(player.level/2 - 1)) + (statHold/(player.level*2)) + 1; //Make new HP stat with extra growth if there is a focus
+    player.maxHP = player.maxHP + (2*(player.level/5 - 1)) + (statHold/player.level) + 1; //Make new HP stat with extra growth if there is a focus
     Sleep(100);
     cout << player.maxHP <<endl;
     cout << "\n";
@@ -1515,7 +1515,7 @@ void levelUp()
     //Display new MP
     cout << "MP           " << player.maxMP << " --> ";
     statHold = player.maxMP;
-    player.maxMP = player.maxMP + abs(player.level/3 - 1) + (statHold/(player.level*2)) + 1; //Make new MP stat with extra growth if there is a focus
+    player.maxMP = player.maxMP + abs(player.level/5 - 1) + (statHold/player.level) + 1; //Make new MP stat with extra growth if there is a focus
     Sleep(100);
     cout << player.maxMP <<endl;
     cout << "\n";
@@ -1524,7 +1524,7 @@ void levelUp()
     //Display new Strength
     cout << "Strength     " << player.strength << " --> ";
     statHold = player.strength;
-    player.strength = player.strength + ((player.level - 1)/3) + ((statHold/2)/player.level) + 1; //Make new Strength Stat with extra growth if there is a focus
+    player.strength = player.strength + ((player.level - 1)/5) + ((statHold/2)/player.level) + 1; //Make new Strength Stat with extra growth if there is a focus
     Sleep(100);
     cout << player.strength <<endl;
     cout << "\n";
@@ -1533,7 +1533,7 @@ void levelUp()
     //Display new Defense
     cout << "Defense      " <<player.defense << " --> ";
     statHold = player.defense;
-    player.defense = player.defense + ((player.level - 1)/3) + ((statHold/2)/player.level) + 1; //Make new Defense Stat with extra growth if there is a focus
+    player.defense = player.defense + ((player.level - 1)/5) + ((statHold/2)/player.level) + 1; //Make new Defense Stat with extra growth if there is a focus
     Sleep(100);
     cout << player.defense <<endl;
     cout << "\n";
@@ -1542,7 +1542,7 @@ void levelUp()
     //Display new intelligence
     cout << "Intelligence " <<player.intelligence << " --> ";
     statHold = player.intelligence;
-    player.intelligence = player.intelligence + ((player.level - 1)/3) + ((statHold/2)/player.level) + 1; //Make new Intelligence stat with extra growth if there is a focus
+    player.intelligence = player.intelligence + ((player.level - 1)/5) + ((statHold/2)/player.level) + 1; //Make new Intelligence stat with extra growth if there is a focus
     Sleep(100);
     cout << player.intelligence <<endl;
     cout << "\n";
@@ -1551,7 +1551,7 @@ void levelUp()
     //Display new Resistance
     cout << "Resistance   " <<player.resistance << " --> ";
     statHold = player.resistance;
-    player.resistance = player.resistance + ((player.level - 1)/3) + ((statHold/2)/player.level) + 1; //Make new Resistance stat with extra growth if there is a focus
+    player.resistance = player.resistance + ((player.level - 1)/5) + ((statHold/2)/player.level) + 1; //Make new Resistance stat with extra growth if there is a focus
     Sleep(100);
     cout << player.resistance <<endl;
     cout << "\n";
@@ -2239,7 +2239,7 @@ void removeRun()
     cout << "\n \n \n \n \n \n \n";
     cout << "\t \t \t \t \t \tThis is life or death." <<endl;
     cin.get();
-    runAway = 'n'; //Remove Run away visually 
+    runAway = 'n'; //Remove Run away visually
 }
 /****************************** REMOVE ABILITY TO RUN AWAY *****************************/
 
