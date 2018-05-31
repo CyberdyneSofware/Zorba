@@ -91,13 +91,13 @@ void InventoryClass::InventoryCommand()
 
     ///normal run
     //if user is adding an item to the inventory
-    if(addOrManage == 'a' && addOrManage == 'A')
+    if(addOrManage == 'a' || addOrManage == 'A')
     {
         run.AddItem();
     }
 
     //if user is managing inventory
-    else if(addOrManage == 'b' && addOrManage == 'B')
+    else if(addOrManage == 'b' || addOrManage == 'B')
     {
         run.ManageInventory();
     }
@@ -105,9 +105,6 @@ void InventoryClass::InventoryCommand()
 
 
 }
-
-
-
 
 
 /******
@@ -190,8 +187,9 @@ void InventoryClass::ManageInventory()
 
         ///exit possibility
         //do they want to continue and manage the inventory
-        cout << "\n\nDo you want to manage your inventory or EXIT the inventory?";
-        cout << "\nType in 'e' if you wish to EXIT or any other key to CONTINUE: ";
+        cout << "\n\nDo you want to MANAGE your inventory or EXIT the inventory?";
+        cout << "\nType in 'exit' if you wish to exit \nAnd any a character key to continue";
+        cout << "\nEnter here: ";
         cin >> exit;
         cin.get();
         system("CLS"); //clear the screen
@@ -613,10 +611,10 @@ void InventoryClass::ManageInventory()
 
                 }
 
-
             //if they want to go through the loop again
-            cout << "\n\nDo you still want to manage your inventory?";
-            cout << "\nType in 'exit' if you wish to exit or any key to continue: ";
+            cout << "\n\nDo you still want to MANAGE your inventory?";
+            cout << "\nType in 'exit' if you wish to exit \nAnd any a character key to continue";
+            cout << "\nEnter here: ";
             cin >> exit;
             cin.get();
             system("CLS");
@@ -627,15 +625,6 @@ void InventoryClass::ManageInventory()
     }
 
 
-
-    //if they want to exit
-    if(exit == 'e' || exit == 'E')
-    {
-        cout << "\n\nYou close your bag and continue on your journey.";
-        cin.get();
-        system("CLS"); //clear the screen
-    }
-
     //if this is their first time running the program
     if(firstrun == 0)
     {
@@ -644,11 +633,19 @@ void InventoryClass::ManageInventory()
             InventoryClass::addOrManage = 'c';
         }
         firstrun++;
-        run.InventoryCommand();
     }
 
-    //so it doesn't run twice
-    InventoryClass::addOrManage = 'c';
+    //if they want to exit
+    if(exit == 'e' || exit == 'E')
+    {
+        cout << "\n\nYou close your bag and continue on your journey.";
+        cin.get();
+        system("CLS"); //clear the screen
+        if(InventoryClass::addOrManage == 'b')
+        {
+            InventoryClass::addOrManage = 'c';
+        }
+    }
 
 }
 
