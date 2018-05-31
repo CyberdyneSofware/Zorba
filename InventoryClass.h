@@ -6,7 +6,6 @@
 #include <list>
 
 #include "Item.h"
-#include "Fight.h"//Taylor's Fight code
 
 using namespace std;
 

@@ -9,11 +9,6 @@ using namespace std;
 
 
 
-int cordx, cordy; //holds the x and y coordinates globally for the mean time
-//global variables - add to the command file when you take out main
-
-
-
 int main()
 {
     //this is a temporary file which allows you to test the inventory code while it's being written
