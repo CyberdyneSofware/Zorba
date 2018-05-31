@@ -682,7 +682,7 @@ void InventoryClass::AddItem()
         /* Out of battle */
 
         //check each room for a chest - if they are the coordinates then they will open it - if they have opened it then set it's open or close variable true
-        if(cordx == 0 && cordy == 0 && chest00 == false)
+        if(InventoryClass::cordx == 0 && InventoryClass::cordy == 0 && chest00 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -703,7 +703,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,1)
-        else if(cordx == 0 && cordy == 1 && chest01 == false)
+        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 1 && chest01 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -724,7 +724,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,2)
-        else if(cordx == 0 && cordy == 2 && chest02 == false)
+        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 2 && chest02 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -745,7 +745,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,3)
-        else if(cordx == 0 && cordy == 3 && chest03 == false)
+        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 3 && chest03 == false)
         {
             cout << "\n";
             cout << "\nThe end of the game draws near and the fateful battle will begin here are a few things to prepare you for this fight.";
@@ -791,7 +791,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (-1,1)
-        else if(cordx == -1 && cordy == 1 && chestNegative11 == false)
+        else if(InventoryClass::cordx == -1 && InventoryClass::cordy == 1 && chestNegative11 == false)
         {
             cout << "\n\nDA DA \nA CHEST HAS BEEN FOUND";
             cout << "\n";
@@ -812,7 +812,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (1,1)
-        else if(cordx == 1 && cordy == 1 && chest11 == false)
+        else if(InventoryClass::cordx == 1 && InventoryClass::cordy == 1 && chest11 == false)
         {
             cout << "\n\nDA DA \nA CHEST HAS BEEN FOUND";
             cout << "\n";

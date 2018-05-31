@@ -18,6 +18,7 @@ buffs: Resistance = 'r' - modifies resistance
 
 
 //Temporary place for the character stats - TAKE OUT ONCE TAYLOR'S CODE HAS BEEN COMBINED
+/*
 struct character{
 
     char name[30]; //Name - name of character/Monster
@@ -35,6 +36,7 @@ struct character{
     int AP = 10; //Ability points - points to distribute towards stats of player choice
 
 };
+*/
 
 //the struct for any item
 struct item
