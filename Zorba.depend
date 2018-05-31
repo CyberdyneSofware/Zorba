@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1527733229 source:c:\users\sovie\desktop\zorba-compiling\main.cpp
+	<iostream>
+	<cstring>
+	<windows.h>
+	"move.h"
+	<math.h>
+	<ctype.h>
+
+1527734199 c:\users\sovie\desktop\zorba-compiling\move.h
+	"rooms.h"
+	<ctype.h>
+	<iostream>
+	<stdio.h>
+
+1527734535 c:\users\sovie\desktop\zorba-compiling\rooms.h
+	"move.h"
+	"Fight.h"
+
+1527734259 c:\users\sovie\desktop\zorba-compiling\fight.h
+	<iostream>
+	<Windows.h>
+	<cstdlib>
+	<stdio.h>
+	<ctime>
+
