@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <ctime>
 
+
 int fight1();
 void mon();
 using namespace std;

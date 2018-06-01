@@ -24,3 +24,53 @@
 	<stdio.h>
 	<ctime>
 
+1527735092 source:c:\users\kenzie\desktop\zorba-combined-code\main.cpp
+	<iostream>
+	<cstring>
+	<windows.h>
+	"move.h"
+	<math.h>
+	<ctype.h>
+
+1527735723 c:\users\kenzie\desktop\zorba-combined-code\move.h
+	"rooms.h"
+	"InventoryClass.h"
+	<ctype.h>
+	<iostream>
+	<stdio.h>
+
+1527824123 c:\users\kenzie\desktop\zorba-combined-code\rooms.h
+	"InventoryClass.h"
+
+1527823867 c:\users\kenzie\desktop\zorba-combined-code\fight.h
+	<iostream>
+	<Windows.h>
+	<cstdlib>
+	<stdio.h>
+	<ctime>
+
+1527824123 c:\users\kenzie\desktop\zorba-combined-code\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+	"Item.h"
+	"Fight.h"
+	"move.h"
+
+1527823284 c:\users\kenzie\desktop\zorba-combined-code\item.h
+	<iostream>
+	<list>
+	<string.h>
+
+1527823284 source:c:\users\kenzie\desktop\zorba-combined-code\inventoryclass.cpp
+	<iostream>
+	<string.h>
+	<list>
+	<stdlib.h>
+	<cstdlib>
+	"InventoryClass.h"
+	<ctime>
+
+1527823284 source:c:\users\kenzie\desktop\zorba-combined-code\item.cpp
+	"Item.h"
+

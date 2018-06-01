@@ -4,9 +4,9 @@
 #include <iostream>
 #include <cstring>
 #include <windows.h>
-#include "move.h"
 #include <math.h>
 #include <ctype.h>
+#include <InventoryClass.h>
 
 using namespace std;
 

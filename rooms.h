@@ -3,8 +3,7 @@
 
 #ifndef ROOMS_H_INCLUDED
 #define ROOMS_H_INCLUDED
-#include "move.h"//Phillip's Commands / Movement code
-#include "Fight.h"//Taylor's Fight code
+#include "InventoryClass.h"
 using namespace std;
 void move1();
 void roomplace();
