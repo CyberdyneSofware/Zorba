@@ -1,92 +1,90 @@
-//set in or out of battle to true or false then add or manage to a or b depending if you're adding or managing
-#define _WIN32_WINNT 0x0501
-//Triple Entente 2018
 #include <iostream>
-#include <cstring>
-#include <windows.h>
-#include <math.h>
-#include <ctype.h>
-#include <InventoryClass.h>
+#include <string.h>
+#include <list>
+#include<stdlib.h>
+
+#include "InventoryClass.h"
 
 using namespace std;
 
-void menu();
-int main();
-void begining();
-
-void MaximizeOutputWindow(void)
-{
-    HWND consoleWindow = GetConsoleWindow(); // This gets the value Windows uses to identify your output window
-    ShowWindow(consoleWindow, SW_MAXIMIZE); // this mimics clicking on its' maximize button
-}
-
-void menu2()
-{
-    MaximizeOutputWindow();
-    cout << "                                                                                           .\n";
-    cout << "                                                                                          /y.\n";
-    cout << "                                                                                         .s/\n";
-    cout << "                                                                           ----/---::---+oy/-::---::--:\n";
-    cout << "                                                                          -oosyh+sshosssyoysshsssyhossh-\n";
-    cout << "                                                                         `+syydysyhhsyyh+syyhdsyydysyho\n";
-    cout << "                                                                         oossyyossysssy+/hsshsssyd+ysd.\n";
-    cout << "                                                                        `oosshsssso//so./++shossdossy/\n";
-    cout << "                                                              .........::/ossyysssys:..  .:oysosydossh:..\n";
-    cout << "                                                           ////sssyhyyyyysssssso+///-     -////ossssssos+:--.\n";
-    cout << "                                                                 `````/sssyyoyydo/:- -+::s+yyhyossy+\n";
-    cout << "                                                                      `/yssdssshd+/y/.sysyossydssshs\n";
-    cout << "                                                                     /sssyhoyydosys-shsydoyyhysyyy:\n";
-    cout << "                                                                    `osssdosshyosy++ysshyssshsssy/\n";
-    cout << "                                                                    `yyyyhsyyhoyyyoyyyyhssyyysyyo.\n";
-    cout << "                                                                       ```````````+yh/````````````\n";
-    cout << "                                                                                  `hy/`\n";
-    cout << "                                                                                 -dh-\n";
-    cout << "                                                                                 hm/\n";
 
 
-    cout << "                                                  _____     _           ____                 _____     ___ _                     \n";
-    cout << "                                                 |     |_ _| |_ ___ ___|    \\ _ _ ___ ___   |   __|___|  _| |_ _ _ _ ___ ___ ___ \n";
-    cout << "                                                 |   --| | | . | -_|  _|  |  | | |   | -_|  |__   | . |  _|  _| | | | .'|  _| -_|\n";
-    cout << "                                                 |_____|_  |___|___|_| |____/|_  |_|_|___|  |_____|___|_| |_| |_____|__,|_| |___|\n";
-    cout << "                                                       |___|                 |___|                                               \n";
-
-    Sleep(3000);
-    cout << "                                                                                          Presents";
-    Sleep(1000);
-    cout << ".";
-    Sleep(1000);
-    cout << ".";
-    Sleep(1000);
-    cout << ".";
-    Sleep(1000);
-    system("CLS");
+int cordx, cordy; //holds the x and y coordinates globally for the mean time
+//global variables - add to the command file when you take out main
 
 
-
-    int what;
-    cout <<"                                                           8888888888P .d88888b.  88888888b. 8888888b.        d8888\n";
-    cout <<"                                                                d88P  d88P   Y88b 888   Y88b 888   88b       d88888\n";
-    cout <<"                                                               d88P   888     888 888    888 888  .88P      d88P888\n";
-    cout <<"                                                              d88P    888     888 888   d88P 8888888K.     d88P 888\n";
-    cout <<"                                                             d88P     888     888 8888888P   888   Y88b   d88P  888\n";
-    cout <<"                                                            d88P      888     888 888 T88b   888    888  d88P   888\n";
-    cout <<"                                                           d88P       Y88b. .d88P 888  T88b  888   d88P d8888888888\n";
-    cout <<"                                                          d8888888888   Y88888P   888   T88b 8888888P  d88P     888\n\n";
-
-    system("pause");
-    cout << "REMBER: Type all commands in capital or you're a boob and type exit to quit the game\n";
-    system("pause");
-    system("CLS");
-    allotAP();
-}
 
 int main()
 {
+    //this is a temporary file which allows you to test the inventory code while it's being written
+    //from here the program will go to the inventory command - when actually running this please remove this file
 
-    menu2();
-    cout << "Commands:\n N - North\n E - East\n S - South\n W - West\n I - Open inventory\n L - A description of the room you're in\n M - Map of the Dungeon\n";
-    move1();
+    InventoryClass run; //runs the function from the class
+    int battletest; // lets you enter in what you want to test for battle
+
+    /**
+    PLEASE IMPLEMENT THIS INTO YOUR CODE IF YOU ARE ADDING IT TO THE FIGHT CODE OR THE MAIN CODE
+    please add....
+    #include "InventoryClass.h"
+
+    a object called InventoryClass run; you will use this to be calling the inventory command
+    when you want to do anything with the inventory please call run.InventoryCommand
+
+    the InventoryClass::inOrOutBattle variable should be set to either true or false
+    true meaing that a battle is running a the current moment
+    or false meaning there is no battle running at the current moment
+    the variable will be automatically set to false.
+
+    the InventoryClass::addOrManage variable to be set to either 'a' or 'b'
+    'a' meaning adding an item
+    'b' meaning managing inventory
+
+    please add....
+    #include "InventoryClass.h"
+
+    a object called InventoryClass run; you will use this to be calling the inventory command
+    when you want to do anything with the inventory please call run.InventoryCommand
+
+    the InventoryClass::inOrOutBattle variable should be set to either true or false
+    true meaing that a battle is running a the current moment
+    or false meaning there is no battle running at the current moment
+    the variable will be automatically set to false.
+
+    the InventoryClass::addOrManage variable to be set to either 'a' or 'b'
+    'a' meaning adding an item
+    'b' meaning managing inventory
+
+    **/
+
+    cout << "This is the test file for the inventory: please enter in the information which cannot be inferred at this time\ndue to this being a test file.";
+    cout << "\nEnter the x coordinate here: ";
+    cin >> InventoryClass::cordx;
+    cin.get();
+    cout << "\nEnter the y coordinate here: ";
+    cin >> InventoryClass::cordy;
+    cin.get();
+
+    cout << "\nEnter the letter for what you are testing here a/adding an item, b/managing inventory: ";
+    cin >> InventoryClass::addOrManage;
+    cin.get();
+
+    cout << "\nEnter 0 if you are testing out of battle options or 1 if you are testing in battle options: ";
+    cin >> battletest;
+    cin.get();
+    if (battletest == 0)
+    {
+        InventoryClass::inOrOutBattle = false;
+    }
+    if(battletest == 1)
+    {
+        InventoryClass::inOrOutBattle = true;
+    }
+
+    system("CLS"); //clear the screen
+
+    //go to the main code - this is where it would go when you actually take out the main
+    run.InventoryCommand();
+
+    cout << "\n\nThanks for running the test";
     return 0;
 }
-
-

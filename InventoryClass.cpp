@@ -24,34 +24,11 @@ int firstrun = 0; //makes sure that the items aren't equipped more than once
 int index = 0; //lets me go through a list and find the element im looking for
 bool error = false; //if the user made a mistake
 
+character player; //temporary object for the player TAKE OUT WHEN TAYLOR'S CODE HAS BEEN COMBINED
 InventoryClass run;//object for running the functions from the class
 
 //random generation
 #include <ctime>
-
-/**Constructor**/
-/*
-InventoryClass::InventoryClass()
-{
-    //the pool of items that can be pulled randomly
-    randItemPool = {
-    knife,
-    genericgun,
-    thestaff,
-    beret,
-    blackandwhitejacket,
-    bluehairdye,
-    jeanjacket,
-    steelarmor,
-    hppotion,
-    safetycake,
-    magicleaf,
-    largebook,
-    thinkingcap,
-    woodenshield,
-    antiintelligencepotion}; //holds all the items that can be randomly generated in a pool so they can be gone through
-}
-*/
 
 /**Inventory Command*/
 void InventoryClass::InventoryCommand()
@@ -702,7 +679,7 @@ void InventoryClass::AddItem()
         /* Out of battle */
 
         //check each room for a chest - if they are the coordinates then they will open it - if they have opened it then set it's open or close variable true
-        if(InventoryClass::cordx == 0 && InventoryClass::cordy == 0 && chest00 == false)
+        if(cordx == 0 && cordy == 0 && chest00 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -723,7 +700,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,1)
-        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 1 && chest01 == false)
+        else if(cordx == 0 && cordy == 1 && chest01 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -744,7 +721,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,2)
-        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 2 && chest02 == false)
+        else if(cordx == 0 && cordy == 2 && chest02 == false)
         {
             cout << "\n";
             cout << "\nDA DA \nA CHEST HAS BEEN FOUND";
@@ -765,7 +742,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (0,3)
-        else if(InventoryClass::cordx == 0 && InventoryClass::cordy == 3 && chest03 == false)
+        else if(cordx == 0 && cordy == 3 && chest03 == false)
         {
             cout << "\n";
             cout << "\nThe end of the game draws near and the fateful battle will begin here are a few things to prepare you for this fight.";
@@ -811,7 +788,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (-1,1)
-        else if(InventoryClass::cordx == -1 && InventoryClass::cordy == 1 && chestNegative11 == false)
+        else if(cordx == -1 && cordy == 1 && chestNegative11 == false)
         {
             cout << "\n\nDA DA \nA CHEST HAS BEEN FOUND";
             cout << "\n";
@@ -832,7 +809,7 @@ void InventoryClass::AddItem()
         }
 
         //if they land on (1,1)
-        else if(InventoryClass::cordx == 1 && InventoryClass::cordy == 1 && chest11 == false)
+        else if(cordx == 1 && cordy == 1 && chest11 == false)
         {
             cout << "\n\nDA DA \nA CHEST HAS BEEN FOUND";
             cout << "\n";

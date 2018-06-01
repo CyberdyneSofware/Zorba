@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1527656539 source:c:\users\kenzie\desktop\zorba\inventoryclass.cpp
+	<iostream>
+	<string.h>
+	<list>
+	<stdlib.h>
+	<cstdlib>
+	"InventoryClass.h"
+	<ctime>
+
+1527646493 c:\users\kenzie\desktop\zorba\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+	"Item.h"
+
+1527567865 source:c:\users\kenzie\desktop\zorba\main.cpp
+	<iostream>
+	<string.h>
+	<list>
+	<stdlib.h>
+	"InventoryClass.h"
+	"InventoryClass.h"
+	"InventoryClass.h"
+
+1527643746 c:\users\kenzie\desktop\zorba\item.h
+	<iostream>
+	<list>
+	<string.h>
+
+1527656755 source:c:\users\p8-39\zorba-inventory\main.cpp
+	<iostream>
+	<string.h>
+	<list>
+	<stdlib.h>
+	"InventoryClass.h"
+	"InventoryClass.h"
+	"InventoryClass.h"
+
+1527656755 c:\users\p8-39\zorba-inventory\inventoryclass.h
+	<iostream>
+	<string.h>
+	<list>
+	"Item.h"
+
+1527656755 c:\users\p8-39\zorba-inventory\item.h
+	<iostream>
+	<list>
+	<string.h>
+
+1527717579 source:c:\users\p8-39\zorba-inventory\inventoryclass.cpp
+	<iostream>
+	<string.h>
+	<list>
+	<stdlib.h>
+	<cstdlib>
+	"InventoryClass.h"
+	<ctime>
+
+1527648954 source:c:\users\kenzie\desktop\zorba\item.cpp
+	"Item.h"
+
+1527656755 source:c:\users\p8-39\zorba-inventory\item.cpp
+	"Item.h"
+
