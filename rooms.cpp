@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "rooms.h"
 #include "InventoryClass.h"
 #include "Fight.h"
@@ -17,6 +19,7 @@ void entrance()//Entrance Tile
     cout << "000000000000000\n";
     int player = 0;
     cout << "You are in the entrance, there is a door to the north\n";
+
 }
 
 void main_hall()//main hall
@@ -38,6 +41,7 @@ void main_hall()//main hall
     int player = 0;
     cout << "This is the main hall, there are broken tables and junk everywhere, it looks like its been abandoned for years\n";
     cout << "There is an entrance to the NORTH, EAST, SOUTH, and WEST\n";
+
 }
 void puzzle1()//puzzle room 1, contains what to say in the main hall
 {
@@ -50,6 +54,7 @@ void puzzle1()//puzzle room 1, contains what to say in the main hall
     cout << "0o0o0o0o0o0o0o0  \n";
     cout <<"This looks like a storage room, there are lots of barrels and crates all around the room.\n";
     cout <<"There is writing on the wall, it says 'Say my name, Say my name, Say my name in another room\n";
+
 }
 void puzzle2()//puzzle room 2, contains a statue with the name "Shakira" when the player types "Say my name"
 {
@@ -64,7 +69,7 @@ void puzzle2()//puzzle room 2, contains a statue with the name "Shakira" when th
     cout << "This room is empty, other than a statue with a strange man with a weird mustache\n";
     cout << "Say my name?: ";
     cin >> name;
-    if (name == "HITLER")
+    if (name == "HITLER" || name == "hitler" || name == "Hitler")
     {
 
         cout << "The statue begins to rumble and raise up, reveling letters carved into stone that say: To fight the boss you must type the magic word\n";
@@ -91,9 +96,7 @@ void mboss()//This is the room where the mini-boss is
     cout << " 0o0o0o0 |   |o0o0o0o \n";
     cout << "          S           \n";
     string pass;
-    cout << "A lot of white stuff covers the floor. Some of it's sticky, others not. All there is in the room is a computer with Cheeto stains all over it.";
-
-
+    cout << "A lot of white stuff covers the floor. Some of it's sticky, others not.(You think it might be ice cream)All there is in the room is a computer with Cheeto stains all over it.";
 }
 void test()
 {
@@ -143,7 +146,8 @@ void puzzle3()
     cout << ".";
     cout << "Okay, you can go\n";
     system("pause");
-    //really hard puzzle
+
+
 }
 void hitler1()
 {

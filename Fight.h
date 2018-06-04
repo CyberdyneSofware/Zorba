@@ -16,6 +16,8 @@ a character creation thing       |
 
 #include "InventoryClass.h"
 
+using namespace std;
+
 struct character{//Structure for the character that the player will be
 
     char name[30] = "ZORBA"; //Name - name of character/Monster

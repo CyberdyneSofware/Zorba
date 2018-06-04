@@ -1,5 +1,6 @@
 #ifndef ROOMS_H_INCLUDED
 #define ROOMS_H_INCLUDED
+using namespace std;
 
 //Cyberdyne Software - Phillip King - 2/24/20XX
 //rooms.h contains function prototypes which have descriptions

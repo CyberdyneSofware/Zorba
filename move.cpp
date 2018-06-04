@@ -1,15 +1,14 @@
+#include <iostream>
 #include "move.h"
 #include "Fight.h"
 
 using namespace std;
 
 string movement;
+InventoryClass runmov; //object for the class
 
 void move1()
 {
-    int health;
-    player.HP = health;
-    do{
     roomplace();
     cout << "You are in X: " << InventoryClass::cordx <<" and Y: " << InventoryClass::cordy << "\n";// Displays the Coordinates of where the player is
     cout << "Type a command: ";
@@ -35,8 +34,12 @@ void move1()
     }
     else if(movement == "I")
     {
-        cout << "thicc";
-        //makkie's Inventory set to b
+        //set the add or manage to a
+        InventoryClass::addOrManage = 'b';
+        //set the battle to false
+        InventoryClass::inOrOutBattle = false;
+        //call the command
+        runmov.InventoryCommand();
     }
     else if(movement == "M")//Shows the Map
     {
@@ -52,7 +55,6 @@ void move1()
     }
     mon();
     close();
-    }while(movement != "EXIT");
 }
 
 void roomplace()

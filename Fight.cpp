@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Fight.h"
 
 using namespace std;
@@ -17,6 +18,7 @@ int insult = 1; //Variable for insults from Hitler
 
 char runAway = 'y'; //Variable to show "R: RUN AWAY" in the menu
 
+InventoryClass runfigh; //object for the inventoryClass
 
 void mon()
 {
@@ -488,9 +490,10 @@ bool battle(enemy foe)
 
             else if(action == 'I' || action == 'i') // Call the inventory
             {
-                cout << "This is a placeholder until Philly Compiles code to have inventory as well." <<endl;
-                cout << "For now, this action does nothing." <<endl;
-                system("PAUSE");
+                //call the inventory
+                InventoryClass::addOrManage = 'b';
+                InventoryClass::inOrOutBattle = true;
+                runfigh.InventoryCommand();
             }
 
             else if((action == 'R' || action == 'r') && runAway == 'y')
@@ -538,6 +541,11 @@ bool battle(enemy foe)
         cin.get();
 
         system("CLS");
+
+        //inventory call for monster drops items
+        InventoryClass::addOrManage = 'a';
+        InventoryClass::inOrOutBattle = true;
+        runfigh.InventoryCommand();
 
         player.EXP = player.EXP + foe.EXP; //Grant Player EXP
 

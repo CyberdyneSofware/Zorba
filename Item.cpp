@@ -61,7 +61,7 @@ item dragonslayer = {
     .type = 'w',
     .modifyStat = 7,
     .inuse = false,
-    .message = "The sword has to be almost 8 feet long and the handle has a bandage wrapped around it, \nyou wonder how anyone can pick this thing up.\n With a lot of effort you are able to lift it off the ground."
+    .message = "The sword has to be almost 8 feet long and the handle has a bandage wrapped around it, you wonder how anyone can pick this thing up.\nWith a lot of effort you are able to lift it off the ground maybe an inch."
 };
 
 //battle item
@@ -80,7 +80,7 @@ item bootgun = {
     .type = 'w',
     .modifyStat = 6,
     .inuse = false,
-    .message = "The weapon is a weirdly shaped boot, you wonder if you can even put it on. \nattached to the front is what looks like the front of a gun. \nWritten mysteriously on the side with a sharpie is the words:\n Kick to Shoot."
+    .message = "The weapon is a weirdly shaped boot, you wonder if you can even put it on. Attached to the front is what looks like the front of a gun. \nWritten mysteriously on the side with a sharpie is the words:\n\n    Kick to Shoot."
 };
 
 //end of the battle item
@@ -110,7 +110,7 @@ item beret = {
     .type = 'c',
     .modifyStat = 2,
     .inuse = false,
-    .message = "It looks a bit worn, but kind of neat. Some of the string sewing it together has unraveled and is barely holding a pin to the front. \n(Are you cosplaying as Phillip?)",
+    .message = "It looks a bit worn, but kind of neat. Some of the string sewing it together has unraveled and is barely holding a pin to the front. (Are you cosplaying as Phillip?)",
     .randomnum = 3
 };
 
@@ -120,7 +120,7 @@ item blackandwhitejacket = {
     .type = 'c',
     .modifyStat = 2,
     .inuse = false,
-    .message = "It is a thin jacket with a zipper in the front, you don't know who left this behind. \n(You can almost be as edgy as Alexi with this)",
+    .message = "It is a thin jacket with a zipper in the front, you don't know who left this behind. (You can almost be as edgy as Alexi with this)",
     .randomnum = 4
 };
 
@@ -150,7 +150,7 @@ item leatherarmor = {
     .type = 'c',
     .modifyStat = 3,
     .inuse = false,
-    .message = "The armor is made of what looks like leather, \nbut upon closer inspection it's appears to just be a t-shirt that looks leather."
+    .message = "The armor is made of what looks like leather, but upon closer inspection it's appears to just be a t-shirt that looks leather."
 };
 
 //battle item
@@ -169,7 +169,7 @@ item diamondarmor = {
     .type = 'c',
     .modifyStat = 50,
     .inuse = false,
-    .message = "This armor shimmers brighter than even the most bright highlighter. \nThis will be the last armor you get in this game use it wisely."
+    .message = "This armor shimmers brighter than even the most bright highlighter. This will be the last armor you get in this game use it wisely."
 };
 
 
@@ -190,7 +190,7 @@ item safetycake = {
     .type = 'h',
     .modifyStat = 25,
     .inuse = false,
-    .message = "It's a obnoxiously large cake with brightly colored pink frosting. \nIt looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake so someone probably had fun making it.",
+    .message = "It's a obnoxiously large cake with brightly colored pink frosting. It looks a bit odd in this environment and you wonder how it got here. \nOf course, it's a piece of cake to bake a pretty cake, so someone probably had fun making it.",
     .randomnum = 10
 };
 
@@ -200,7 +200,7 @@ item superpotion = {
     .type = 'h',
     .modifyStat = 50,
     .inuse = false,
-    .message = "It's a glass bottle with a liquid in it. \nWhen you pick it up you notice that it is glowing brightly and the space around it is tinted slightly red."
+    .message = "It's a glass bottle with a liquid in it. When you pick it up you notice that it is glowing brightly and the space around it is tinted slightly red."
 };
 
 
@@ -211,7 +211,7 @@ item magicleaf = {
     .type = 'i',
     .modifyStat = 1,
     .inuse = false,
-    .message = "It seems like just a leaf, \nbut upon closer inspection, \nit seems to be magical. Eating it may increase your intelligence somehow.",
+    .message = "It seems like just a leaf, but upon closer inspection, it seems to be magical. Eating it may increase your intelligence somehow.",
     .randomnum = 11
 };
 
@@ -221,7 +221,7 @@ item largebook = {
     .type = 'i',
     .modifyStat = 4,
     .inuse = false,
-    .message = "The book is dusty so you can't see the cover, \nbut when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION. It will  ",
+    .message = "The book is dusty so you can't see the cover, but when you pick it up some of it brushes off and you can see the words on the front. \nIt says HERE LIES YOUR EDUMACATION.",
     .randomnum = 12
 };
 

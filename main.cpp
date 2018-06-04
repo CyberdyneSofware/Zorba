@@ -76,21 +76,27 @@ void menu()
     cout <<"                                                          d8888888888   Y88888P   888   T88b 8888888P  d88P     888\n\n";
 
     system("pause");
-    cout << "REMBER: Type all commands in capital or you're a boob and type exit to quit the game\n";
+    cout << "REMEMBER: Type all commands in capital or you're a boob and type exit to quit the game\n";
     system("pause");
     system("CLS");
     allotAP();
 }
 
+InventoryClass runmain; //object for running the inventory
+
 int main()
 {
 
     menu();
-    cout << "Commands:\n N - North\n E - East\n S - South\n W - West\n I - Open inventory\n L - A description of the room you're in\n M - Map of the Dungeon\n";
     do{
+        //inventory call
+        //Inventory - chest
+        InventoryClass::addOrManage = 'a';
+        InventoryClass::inOrOutBattle = false;
+        runmain.InventoryCommand();
 
-        //check for chest in room, if there is none, then they can not use A
-        //makkie's inventory set
+        //moved to here so they can see the commands every time
+        cout << "Commands:\n N - North\n E - East\n S - South\n W - West\n I - Open inventory\n L - A description of the room you're in\n M - Map of the Dungeon\n";
         move1();
     }while(movement != "EXIT");
 
