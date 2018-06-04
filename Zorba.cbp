@@ -32,13 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Fight.cpp" />
 		<Unit filename="Fight.h" />
 		<Unit filename="InventoryClass.cpp" />
 		<Unit filename="InventoryClass.h" />
 		<Unit filename="Item.cpp" />
 		<Unit filename="Item.h" />
-		<Unit filename="menu.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="move.cpp" />
 		<Unit filename="move.h" />
+		<Unit filename="rooms.cpp" />
 		<Unit filename="rooms.h" />
 		<Extensions>
 			<code_completion />
