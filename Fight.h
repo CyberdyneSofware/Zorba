@@ -1,9 +1,13 @@
+#ifndef FIGHT_H_INCLUDED
+#define FIGHT_H_INCLUDED
+
 #include <iostream>
 #include <Windows.h>
 #include <cstdlib>
 #include <stdio.h>
 #include <ctime>
 
+#include "InventoryClass.h"
 
 int fight1();
 void mon();
@@ -44,7 +48,7 @@ struct enemy{ //Easiest enemy to fight
     int resistance; //Defense against magical attacks
     float EXP; //Experience gained from the enemy
 };
-void menu();
+void menufight();
 bool battle(enemy foe); //Function for the basic battle setup
 
 int magicOne(enemy foe); //The Level 1 Magic Menu for the Battle
@@ -173,7 +177,7 @@ int fight1()
     battle(knight);
     return 0;
 }
-void menu()
+void menufight()
 {
     char answer = 'n'; //Choice that the player makes
     bool victory = true; //bool variable for if player won or lost a battle
@@ -2224,3 +2228,5 @@ void displayRun()
         cout << "\t              ";
     }
 }
+
+#endif

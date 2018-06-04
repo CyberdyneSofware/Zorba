@@ -1,11 +1,13 @@
+#ifndef ROOMS_H_INCLUDED
+#define ROOMS_H_INCLUDED
+
 //Cyberdyne Software - Phillip King - 2/24/20XX
 //The .h Contains functions which have descriptions and layouts of all the rooms that the player can enter
 
-#ifndef ROOMS_H_INCLUDED
-#define ROOMS_H_INCLUDED
 #include "InventoryClass.h"
+#include "Fight.h"
+
 using namespace std;
-void move1();
 void roomplace();
 void badtile();
 int puzzle=0;

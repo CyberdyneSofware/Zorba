@@ -16,26 +16,6 @@ buffs: intelligence = 'i' - modifies intelligence
 buffs: Resistance = 'r' - modifies resistance
 ****/
 
-
-//Temporary place for the character stats - TAKE OUT ONCE TAYLOR'S CODE HAS BEEN COMBINED
-struct character{
-
-    char name[30]; //Name - name of character/Monster
-    int level = 1; //Level - The character's current level of power
-    float EXP = 0; //Experience - The player's current experience points
-    int maxEXP = 100; //Maximum Experience - Maximum possible Experience points before a character levels up
-    int maxHP = 15; //Maximum hit points - The character's maximum possible Health
-    int HP = 15; //Hit points - The character's current Health
-    int maxMP = 5; //Maximum Mana Points - The character's maximum possible Mana
-    int MP = 5; //Mana points - The Character's current Mana
-    float strength = 2; //Strength - Physical attack power
-    float defense = 2; //Defense - Defense against physical attacks
-    float intelligence = 2; //intelligence - Magical Attack power
-    float resistance = 2; //Resistance - Defense against magic attacks
-    int AP = 10; //Ability points - points to distribute towards stats of player choice
-
-};
-
 //the struct for any item
 struct item
 {

@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 #include "InventoryClass.h"
+#include "Fight.h"
 
 using namespace std;
 
@@ -24,7 +25,6 @@ int firstrun = 0; //makes sure that the items aren't equipped more than once
 int index = 0; //lets me go through a list and find the element im looking for
 bool error = false; //if the user made a mistake
 
-character player; //temporary object for the player TAKE OUT WHEN TAYLOR'S CODE HAS BEEN COMBINED
 InventoryClass run;//object for running the functions from the class
 
 //random generation
