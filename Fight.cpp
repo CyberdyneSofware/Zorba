@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Fight.h"
-
+#include <fstream>
 using namespace std;
 
 character player; //Create Player character

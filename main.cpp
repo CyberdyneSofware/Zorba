@@ -9,6 +9,7 @@
 
 #include "Fight.h"
 #include "move.h"
+#include "dialog.h"
 
 
 using namespace std;
@@ -80,7 +81,8 @@ void menu()
     cout << "REMEMBER: Type all commands in capital or you're a boob and type exit to quit the game\n";
     system("pause");
     system("CLS");
-    allotAP();
+    dialog_intro(); // plays the intro to the game
+    allotAP(); //setting up character
 }
 
 InventoryClass runmain; //object for running the inventory

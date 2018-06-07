@@ -10,7 +10,6 @@ InventoryClass runmov; //object for the class
 void move1()
 {
     roomplace();
-    dialog_intro();
     cout << "You are in X: " << InventoryClass::cordx <<" and Y: " << InventoryClass::cordy << "\n";// Displays the Coordinates of where the player is
     cout << "Type a command: ";
     cin >> movement;
