@@ -10,6 +10,7 @@
 #include "Fight.h"
 #include "move.h"
 
+
 using namespace std;
 
 void menu();

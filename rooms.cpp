@@ -165,7 +165,8 @@ void hitler1()
     cout << " o0|=====+    +====|0o \n";
     cout << " 0o0o0o0 |    |o0o0o0o \n";
     cout << "          S           \n";
-    cout << "hitler";
+
+
     battle(hitler);
 }
 void maps()

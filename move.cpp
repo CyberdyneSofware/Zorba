@@ -1,7 +1,7 @@
 #include <iostream>
 #include "move.h"
 #include "Fight.h"
-
+#include "dialog.h"
 using namespace std;
 
 string movement;
@@ -10,6 +10,7 @@ InventoryClass runmov; //object for the class
 void move1()
 {
     roomplace();
+    dialog_intro();
     cout << "You are in X: " << InventoryClass::cordx <<" and Y: " << InventoryClass::cordy << "\n";// Displays the Coordinates of where the player is
     cout << "Type a command: ";
     cin >> movement;
@@ -85,6 +86,7 @@ void roomplace()
     }
     else if((InventoryClass::cordx == 0)&&(InventoryClass::cordy == 4))//hitler's office cord:(0,4)
     {
+        dialog_mainboss();
         hitler1();
     }
     else//anything that isn't a room

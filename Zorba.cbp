@@ -38,6 +38,7 @@
 		<Unit filename="InventoryClass.h" />
 		<Unit filename="Item.cpp" />
 		<Unit filename="Item.h" />
+		<Unit filename="dialog.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="move.cpp" />
 		<Unit filename="move.h" />

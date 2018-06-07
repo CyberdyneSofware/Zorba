@@ -10,6 +10,7 @@ enemy knight; //Create slightly harder enemy
 enemy daemon; //Create difficult enemy
 enemy hitler; //Create Boss enemy
 
+const char outfile[] = "Hitler_Score.txt";
 char active = 'n'; //Variable for player action during battle
 
 char enetype = '0'; //Variable to allow different enemy attack patterns
@@ -17,6 +18,9 @@ char enetype = '0'; //Variable to allow different enemy attack patterns
 int insult = 1; //Variable for insults from Hitler
 
 char runAway = 'y'; //Variable to show "R: RUN AWAY" in the menu
+
+int turn; //counts the amount of turns it takes to fight hitler
+const char highscores[] = "Highscores.txt";
 
 InventoryClass runfigh; //object for the inventoryClass
 
@@ -247,7 +251,7 @@ bool battle(enemy foe)
     cin.get();
 
     /*******************************    Default battle menu    ***************************************/
-
+    turn = 0; //set it to zero at the beginning
     while(player.HP > 0 && foe.HP > 0 && !(active == 'r' || active == 'R'))
     {
         active = 'n';
@@ -306,6 +310,28 @@ bool battle(enemy foe)
                     pAct++; //Allow player to move
                     insult = 3; //Reduce player's defense and resistance
                     message = 'n';
+                }
+
+                //when hitler dies
+                if(foe.HP < 1)
+                {
+                    //call the function to do if stream ofstream and bring turn through the function
+                    ofstream out;
+
+                    out.open(highscores, ios::app); // open the file
+
+                    if(!out)
+                    {
+                        cout << "\n nani!!!! error was made when opening the file";
+                    }
+
+                    else
+                    {
+                        out << "It took you " << turn << " turns to Kill hitler";
+                        out << "\n";
+                        out.close(); //close the file
+                    }
+                    cout << "It took you " << turn << " turns to kill hitler, your score is saved in the txt file Hitler_Score";
                 }
             }
 
@@ -521,6 +547,8 @@ bool battle(enemy foe)
         }
 
         system("CLS");
+
+        turn++;
     }
 
 
